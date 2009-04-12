@@ -1,0 +1,23 @@
+dradis v2.0.1 (23rd of February 2009)
+ - smart command line parsing. The console client accepts multi-word parameters using quotes
+ - *add* extension allows adding nodes and categories
+ - add parameter description support to the extensions
+ - close bug 2572271: ruby 1.8.7 compatibility fix for wxWidgets interface
+ - first security patch
+ - minor bug fixes
+
+dradis v2.0 (29th of January 2009)
+
+server component:
+ - Forget Hosts, Services and Protocols. Embrace the freedom of Nodes.
+ - Forget SOAP, embrace REST
+ - Powered by Rails 2.0 and ExtJS 2.2 (http://www.extjs.com/)
+ - Now with security! (SSL transport and user authentication)
+
+client component:
+ - adapt the wxWidgets client to the new node-note structure of the server.
+ - forget SOAP, embrace REST web services to talk to the server.
+ - refactor of the *modules* component, now *extensions*.
+ - john's string encoding extension is built-in the dradis client.
+ - the first building blocks of the service-oriented multiverse architecture
+ have been laid out.
