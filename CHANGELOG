@@ -1,3 +1,15 @@
+v2.1 (13th of April 2009)
+server component:
+ - import/export plugin architecture
+ - import/export plugin generators
+ - sample WordXML export plugin
+ - sample WikiMedia import plugin
+
+client component:
+ - import extention allows nmap output imports
+ - import note from plain text file
+ - more powerful add extension: add a note from the console
+
 dradis v2.0.1 (23rd of February 2009)
  - smart command line parsing. The console client accepts multi-word parameters using quotes
  - *add* extension allows adding nodes and categories
