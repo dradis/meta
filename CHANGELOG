@@ -1,3 +1,17 @@
+v2.2 (xx of xx 2009)
+server component:
+ - add attachments to nodes
+ - add 'refresh' buttons to the tree and the notes list
+ - force 'webrick' even if mongrel is installed (no SSL support in mongrel)
+ - centralise the framework version information.
+ - autoExpandColumn now works on IE
+ - Rails runs in "production" mode
+
+client component:
+ - dradis can be used with wxRuby 2.0.0
+ - better error handling for REST web service communication errors
+ - easier REST credentials configuration in ./conf/dradis.xml
+
 v2.1.1 (17th of April 2009)
  - the version string was not properly updated across the different modules.
 
