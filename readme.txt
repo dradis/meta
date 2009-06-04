@@ -1,13 +1,14 @@
-Dradis version 2.2.0 installation
+Dradis version 2.2 installation
 -------------------------------
 
 General Information
 -------------------
 
-dradis is an open source tool for sharing information during Security Testing. 
+dradis is an open source tool for sharing information.
 
 The official home of dradis is:
     http://dradis.sourceforge.net/
+
 Please query the website for information and documentation on the system.
 
 
@@ -24,6 +25,7 @@ The sqlite3 and wxruby gems are dependant on the following dlls to be in the sys
 - msvcr71.dll
 - msvcp71.dll
 - msvcrt.dll
+
 If installer did not have access to the system32 then these files need to be copied 
 manually. Simply copy them from the dradis install directory to the $windows\system32 
 folder.
