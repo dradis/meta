@@ -1,97 +1,79 @@
-Dradis 2.1.1 - Release Notes
+Dradis 2.2.0 - Release Notes
 ========================
--- version 2.1.1 (Easter'09 Release, mark 2), April 17th, 2009 --
+-- version 2.2.0, June 3rd, 2009 --
 -- http://dradisframework.org --
 
 What is new
 -----------
 We are happy to announce that the following new features have made
-it into the version 2.1:
+it into the version 2.2.0:
+
+1. -- wxRuby 2.0.0 on client component --
+
+The component is no compatible with the latest version of wxRuby, 
+version 2.0.0.
 
 
-1. -- Import from an external source --
+2. -- Client component Restfulness --
 
-The dradis server component now gives you the ability to populate your
-notes from an external source through the browser interface. This is
-managed by an addition to the server component architecture - import
-plugins. Version 2.1 ships with a proof of concept wiki_import plugin 
-that allows you to import your vulnerability notes from an external 
-MediaWiki source.
-
-With very little effort you can create your own import plugin that is
-customised to your specific needs. To assist you in this the framework
-provides you with a import plugin generator. Running
-'ruby script/generate import_plugin <plugin_name>' in the server
-application folder, generates a skeleton in the vendor/plugins folder 
-from which you can create your own import plugin. For examples and more
-details see dradis community forums at: 
-
-http://dradisframework.org/community/
+Some improvements on the REST aspects on the client component side
+have been made:
+ - better error handling for REST web service communication errors
+ - easier REST credentials configuration in ./conf/dradis.xml
 
 
-2. -- Export to an external document format --
+3. -- Attachments to nodes --
 
-To coincide with the import functionality, dradis now also speeds up
-your reporting time by exporting to an external document format. This
-is also presented to you through the browser interface. As with the
-import functionality this is enabled by the addition of export plugins
-to the server component architecture. Version 2.1 ships with WordXML
-export plugin (checkout the forums for Excel and PDF examples).
-
-You can create you own customised export plugin by using the export
-plugin generator. This works in the same fashion as the import plugin.
-Running 'ruby script/generate export_plugin <plugin_name> will present
-you with a skeleton in the vendor/plugins folder that you can use to
-create your own customised export plugin.
-
-For more info on both the import and export plugin generators have a
-look at the USAGE files that the generators provides. The following will
-also be helpful: [i], [ii]
+After long anticipation, attachements can now be added to nodes. This 
+is done through the web browser interface. A lot of effort has been 
+put into making this as easy to use as possible. To make the management
+of attachement as easy and flexible they are stored to the file system
+but still referenced in an ActiveRecord-type way. 
 
 
-3. -- Import extension enables NMAP output import --
+4. -- Web browser interface --
 
-An extension to the client component now enables you to import NMAP
-output in the dradis database. The extension except NMAP output in
-either normal, grepable or xml format. For example:
-
-~$ cd dradis-2.1/client/
-~/dradis-2.1/client$ ruby dradis.rb
-dradis> import nmap /tmp/full_tcp.xml xml
-
-This of course, needs the server to be running and the client 
-configuration file (dradis-2.1/client/conf/dradis.xml) being properly 
-set.
-
-4. -- Import extension enables text file import --
-
-The same import extension that enables to NMAP import also provides
-the ability to import notes from a single text file. This allows you
-to import notes gathered from external sources (i.e. nikto) to a dradis 
-note.
+- You have asked for refresh buttons - now they are there. You can now 
+refresh the tree or the notes panel in the browser view by the click
+of a button. 
+- The nodes tree for IE browsers did not expand before when it extended
+beyond the hight of the browser. This has now been fixed.
 
 
-5. -- More powerful add extension --
+5. -- Force webrick --
 
-The add extension on the client component has been improved. You can
-now add notes and categories though the client console
+The dradis server uses webrick instead of mongrel to enable SSL 
+communication. A standard Rails application defaults to mongrel is the 
+option is available. Dradis has been changed to use webrick even if 
+mongrel is available. 
+
+
+6. -- Version information --
+
+To ease the deployment process the frameword version information is now
+kept in a central place from where it can be referenced.
+
+
+7. -- Server mode --
+
+The dradis server now runs in 'production' mode.
 
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.1.0-setup.exe, and the platform independant packages,
-dradis-v2.1.0.tar.bz2 and dradis-v2.1.0.tar.gz. This can all be
-downloaded from the website [ii]. For linux install instuctions please
-see [iv].
+dradis-v2.2.0-setup.exe, and the platform independant packages,
+dradis-v2.2.0.tar.bz2 and dradis-v2.2.0.tar.gz. This can all be
+downloaded from the website [i]. For linux install instuctions please
+see [ii].
 
 
 Thank you
 ---------
-Thanks for all the feedback, idea and support that has driven this
-release. It is a major incentive in moving hti sproject forward.
-Special thank to Jacques Louw for the patches that he has contributed
-to the client component.
+Thanks for all the feedback, ideas and support that has driven this
+release. It is a major incentive in moving this sproject forward.
+Special thank to Matt Downham for his work on the new Dradis icons.
+See [iii] for the forum discussion.
 
 Getting involved
 ---------
@@ -102,8 +84,6 @@ dradis community forums:
 dradis development mailing list:
   https://lists.sourceforge.net/mailman/listinfo/dradis-devel 
 
-
-[i] - http://usefulfor.com/ruby/2009/03/27/how-to-create-a-dradis-export-plugin/
-[ii] - http://dradisframework.org/community/index.php?board=2.0
-[iii] - http://dradisframework.org
-[iv] - http://dradisframework.org/install.html
+[i] - http://dradisframework.org
+[ii] - - http://dradisframework.org/install.html
+[iii] - http://dradisframework.org/community/index.php?topic=8.msg10#msg10
