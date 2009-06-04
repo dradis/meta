@@ -1,20 +1,20 @@
-Dradis 2.2.0 - Release Notes
+Dradis 2.2 - Release Notes
 ========================
--- version 2.2.0, June 3rd, 2009 --
+-- version 2.2, June 4th, 2009 --
 -- http://dradisframework.org --
 
 What is new
 -----------
 We are happy to announce that the following new features have made
-it into the version 2.2.0:
+it into the version 2.2:
 
 1. -- wxRuby 2.0.0 on client component --
 
-The component is no compatible with the latest version of wxRuby, 
+The component is now compatible with the latest version of wxRuby, 
 version 2.0.0.
 
 
-2. -- Client component Restfulness --
+2. -- Client component RESTfulness --
 
 Some improvements on the REST aspects on the client component side
 have been made:
@@ -24,10 +24,10 @@ have been made:
 
 3. -- Attachments to nodes --
 
-After long anticipation, attachements can now be added to nodes. This 
+After long anticipation, attachments can now be added to nodes. This 
 is done through the web browser interface. A lot of effort has been 
 put into making this as easy to use as possible. To make the management
-of attachement as easy and flexible they are stored to the file system
+of attachments as easy and flexible they are stored to the file system
 but still referenced in an ActiveRecord-type way. 
 
 
@@ -36,25 +36,19 @@ but still referenced in an ActiveRecord-type way.
 - You have asked for refresh buttons - now they are there. You can now 
 refresh the tree or the notes panel in the browser view by the click
 of a button. 
-- The nodes tree for IE browsers did not expand before when it extended
-beyond the hight of the browser. This has now been fixed.
+- The notes grid for IE browsers did not display the columns properly.
+This has now been fixed.
 
 
 5. -- Force webrick --
 
 The dradis server uses webrick instead of mongrel to enable SSL 
-communication. A standard Rails application defaults to mongrel is the 
+communication. A standard Rails application defaults to mongrel if the 
 option is available. Dradis has been changed to use webrick even if 
 mongrel is available. 
 
 
-6. -- Version information --
-
-To ease the deployment process the frameword version information is now
-kept in a central place from where it can be referenced.
-
-
-7. -- Server mode --
+6. -- Server mode --
 
 The dradis server now runs in 'production' mode.
 
@@ -62,18 +56,18 @@ The dradis server now runs in 'production' mode.
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.2.0-setup.exe, and the platform independant packages,
+dradis-v2.2.0-setup.exe, and the platform independent packages,
 dradis-v2.2.0.tar.bz2 and dradis-v2.2.0.tar.gz. This can all be
-downloaded from the website [i]. For linux install instuctions please
+downloaded from the website [i]. For Linux install instructions please
 see [ii].
 
 
 Thank you
 ---------
 Thanks for all the feedback, ideas and support that has driven this
-release. It is a major incentive in moving this sproject forward.
-Special thank to Matt Downham for his work on the new Dradis icons.
-See [iii] for the forum discussion.
+release. It is a major incentive in moving this project forward.
+Special thank to Matthew Rex Downham of 10th Mile [iii] for his work 
+on the new Dradis logo and banners. See [iv] for the forum discussion.
 
 Getting involved
 ---------
@@ -84,6 +78,7 @@ dradis community forums:
 dradis development mailing list:
   https://lists.sourceforge.net/mailman/listinfo/dradis-devel 
 
-[i] - http://dradisframework.org
-[ii] - - http://dradisframework.org/install.html
-[iii] - http://dradisframework.org/community/index.php?topic=8.msg10#msg10
+  [i] - http://dradisframework.org
+ [ii] - http://dradisframework.org/install.html
+[iii] - http://www.10thmile.com / http://www.mrexd.com
+ [iv] - http://dradisframework.org/community/index.php?topic=8.msg10#msg10
