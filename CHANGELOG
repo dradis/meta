@@ -1,8 +1,6 @@
 v2.3 (2nd of August 2009)
 introducing the meta-server component:
- - multi-project management
- - a central project repository to hold all your projects, for future reference
-   and for backup purposes
+ - for multi-project management
 
 server component:
   - upload plugins. A new server plugin category: import into dradis the
