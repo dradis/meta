@@ -1,3 +1,26 @@
+v2.3 (2nd of August 2009)
+introducing the meta-server component:
+ - multi-project management
+ - a central project repository to hold all your projects, for future reference
+   and for backup purposes
+
+server component:
+  - upload plugins. A new server plugin category: import into dradis the
+    contents of any file (nmap, nessus, etc.).
+  - refactor the WordExport plugin:
+    + create templates using Word only
+    + convert any document into a dradis template in < 10 minutes
+  - project management plugin update:
+    + create project templates for future re-use (read methodologies)
+    + export project in .zip format (DB + attachments)
+    + import projects/templates
+    + checkout / commit project revisions from and to the meta-server
+
+  - enhanced nodes tree: filtering and quick actions buttons
+
+client component:
+  - new import extensions: Nessus and Qualys
+
 v2.2 (11th of June 2009)
 server component:
  - add attachments to nodes
