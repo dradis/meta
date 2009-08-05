@@ -1,73 +1,95 @@
-Dradis 2.2 - Release Notes
-========================
--- version 2.2, June 11th, 2009 --
--- http://dradisframework.org --
+ dradis Framework 2.3 - Release Notes
+=====================================
+ -- version 2.3, August 5th, 2009 --
+  -- http://dradisframework.org --
 
 What is new
 -----------
 We are happy to announce that the following new features have made
-it into the version 2.2:
+it into the version 2.3:
 
-1. -- wxRuby 2.0.0 on client component --
+1. -- New component: the Meta-Server (beta) -- 
+A central project repository to hold all your projects, for future reference and
+for backup purposes.
 
-The component is now compatible with the latest version of wxRuby, 
-version 2.0.0.
+The idea is to have the project management functions into a separate components
+so we can grow each component to better solve the problem they are trying to 
+solve and not clutter one component with functionality that should have been 
+provided in other.
 
+In this early stage of development, the Meta-Server component is provided as a
+separate package. Download from: http://dradisframework.org/
 
-2. -- Client component RESTfulness --
+2. -- New plugin category: upload plugins --
+Import into dradis the contents of any file. We already have implementations 
+that let you upload Nmap and Nessus results.
 
-Some improvements on the REST aspects on the client component side
-have been made:
- - better error handling for REST web service communication errors
- - easier REST credentials configuration in ./conf/dradis.xml
+Even a plugin generator is also provided so you can create your own upload 
+plugins:
 
+$ ./script/generate upload_plugin nikto_upload
 
-3. -- Attachments to nodes --
+More information on plugins is available at:
+  http://dradisframework.org/server_plugins.html
 
-After long anticipation, attachments can now be added to nodes. This 
-is done through the web browser interface. A lot of effort has been 
-put into making this as easy to use as possible. To make the management
-of attachments as easy and flexible they are stored to the file system
-but still referenced in an ActiveRecord-type way. 
+3. -- New client-side extensions: Qualys and Nessus --
+We had the Nmap import extension, two new modules let you include Nessus and 
+Qualys results from the console client.
 
+4. -- Better Word reports --
+There is no excuse not to use the WordExport plugin now. You can generate your
+templates starting from any existing Word document and you will not need to 
+edit the XML code. Just using Word you can have your template running in a few
+minutes.
 
-4. -- Web browser interface --
+To explain everything better, we have put together a tutorial on using the 
+plugin at:
+  http://dradisframework.org/WordExport_templates.html
 
-- You have asked for refresh buttons - now they are there. You can now 
-refresh the tree or the notes panel in the browser view by the click
-of a button. 
-- The notes grid for IE browsers did not display the columns properly.
-This has now been fixed.
+5. -- Project Management --
+It is possible to export your current project into a file in the file system to
+import it back at a later point.
 
+You can choose to export the contents of the database only or also include the
+attachments. Think about the implications, you can create a set of nodes and 
+notes that represent what you would normally do when testing 'web applications'
+save that set as a 'template' and use it from now on every time you need to 
+test a web application.
 
-5. -- Force webrick --
+Of course you can store you project into the Meta-Server and check out existing
+projects from it.
 
-The dradis server uses webrick instead of mongrel to enable SSL 
-communication. A standard Rails application defaults to mongrel if the 
-option is available. Dradis has been changed to use webrick even if 
-mongrel is available. 
+6. -- Interface enhancements --
+We have added a few elements to the web interface to make the small every day
+tasks a bit easier. There is a new node filter in the tree that you can use to
+hide the nodes you are not interested in. There are other 'quick action' 
+buttons that let you expand/collapse/refresh the tree.
 
-
-6. -- Server mode --
-
-The dradis server now runs in 'production' mode.
-
+We have also added a new button in the status bar that would present you with
+the latest feaures included in the current version of the framework so you can
+quickly learn how to make the most of the available functionality.
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.2.0-setup.exe, and the platform independent packages,
-dradis-v2.2.0.tar.bz2 and dradis-v2.2.0.tar.gz. This can all be
-downloaded from the website [i]. For Linux install instructions please
-see [ii].
+dradis-v2.3.0-setup.exe, and the platform independent packages,
+dradis-v2.3.0.tar.bz2 and dradis-v2.3.0.tar.gz. This can all be
+downloaded from the website [i]. 
+
+For Linux prerequisite instructions please see [ii].
 
 
 Thank you
 ---------
 Thanks for all the feedback, ideas and support that has driven this
 release. It is a major incentive in moving this project forward.
-Special thank to Matthew Rex Downham of 10th Mile [iii] for his work 
-on the new Dradis logo and banners. See [iv] for the forum discussion.
+Special thanks go to:
+  - Daniel Bradberry from MWR InfoSecurity for hist project import/export 
+    implementation
+  - spinbad and his Nessus magic
+  - Abel Gomez and Christian Martorella of S21Sec for their client-side Qualys
+    and Nessus extensions
+  
 
 Getting involved
 ---------
@@ -80,5 +102,3 @@ dradis development mailing list:
 
   [i] - http://dradisframework.org
  [ii] - http://dradisframework.org/install.html
-[iii] - http://www.10thmile.com / http://www.mrexd.com
- [iv] - http://dradisframework.org/community/index.php?topic=8.msg10#msg10

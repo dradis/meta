@@ -1,4 +1,4 @@
-Dradis version 2.2 installation
+Dradis version 2.3 installation
 -------------------------------
 
 General Information
@@ -7,24 +7,29 @@ General Information
 dradis is an open source tool for sharing information.
 
 The official home of dradis is:
-    http://dradis.sourceforge.net/
+    http://dradisframework.org/
 
-Please query the website for information and documentation on the system.
+Please query the website for information and documentation on the system. There 
+is also a forum and a #dradis IRC channel at irc.freenode.org.
+
+    http://dradisframework.org/community/
 
 
-The dradis installation gives the users the option to install the following components:
-- Ruby
-- wxruby gem (the installation of the gem is dependant on a ruby installation)
-- sqlite3 files and sqlite3-ruby gem 
-- dradis server
-- dradis client
+The dradis installation gives the users the option to install the following
+components:
+ - Ruby
+ - wxruby gem (the installation of the gem is dependant on a ruby installation)
+ - sqlite3 files and sqlite3-ruby gem 
+ - dradis server
+ - dradis client
 
 Note when installing as a limited access user:
-The sqlite3 and wxruby gems are dependant on the following dlls to be in the system32: 
-- sqlite3.dll
-- msvcr71.dll
-- msvcp71.dll
-- msvcrt.dll
+The sqlite3 and wxruby gems are dependant on the following dlls to be in the 
+Windows system32 directory: 
+ - sqlite3.dll
+ - msvcr71.dll
+  - msvcp71.dll
+-  msvcrt.dll
 
 If installer did not have access to the system32 then these files need to be copied 
 manually. Simply copy them from the dradis install directory to the $windows\system32 
@@ -65,6 +70,16 @@ The installer creates short cuts to start the dradis command line client and the
 graphical interface client in the Start Menu. 
 
 
+dradis Meta-Server
+------------------
+This is the newest component of the framework. It has been developed using 
+Rails 2.3.3. This version of rails would require you to upgrade your rubygems
+installation. After installing dradis, open a command prompt and type:
+  gem update --system
+
+After updating rubygems, there should be no problem in running the meta server
+with the standard ./script/server method.
+
 Uninstall
 ---------
 The uninstaller removes the dradis client and the dradis server from the 
@@ -73,5 +88,3 @@ the Sqlite3.dll it is left to the user to remove these manually. This can be don
 - run "gem uninstall sqlite3-ruby" in the command line
 - run "gem uninstall wxruby" in the command line
 
-
-3 May 2009
