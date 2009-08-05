@@ -1,6 +1,6 @@
  dradis Framework 2.3 - Release Notes
 =====================================
- -- version 2.3, August 1st, 2009 --
+ -- version 2.3, August 5th, 2009 --
   -- http://dradisframework.org --
 
 What is new
@@ -8,7 +8,7 @@ What is new
 We are happy to announce that the following new features have made
 it into the version 2.3:
 
-1. -- New component: the Meta-Server -- 
+1. -- New component: the Meta-Server (beta) -- 
 A central project repository to hold all your projects, for future reference and
 for backup purposes.
 
@@ -16,6 +16,9 @@ The idea is to have the project management functions into a separate components
 so we can grow each component to better solve the problem they are trying to 
 solve and not clutter one component with functionality that should have been 
 provided in other.
+
+In this early stage of development, the Meta-Server component is provided as a
+separate package. Download from: http://dradisframework.org/
 
 2. -- New plugin category: upload plugins --
 Import into dradis the contents of any file. We already have implementations 
