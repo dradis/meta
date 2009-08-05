@@ -1,7 +1,4 @@
-v2.3 (2nd of August 2009)
-introducing the meta-server component:
- - for multi-project management
-
+v2.3 (5th of August 2009)
 server component:
   - upload plugins. A new server plugin category: import into dradis the
     contents of any file (nmap, nessus, etc.).
@@ -18,6 +15,11 @@ server component:
 
 client component:
   - new import extensions: Nessus and Qualys
+
+introducing the Meta-Server (beta) component:
+ - for multi-project management
+ - download the Meta-Server as a separate package from:
+     http://dradisframework.org/
 
 v2.2 (11th of June 2009)
 server component:
