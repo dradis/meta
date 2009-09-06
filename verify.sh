@@ -157,7 +157,7 @@ if [ $EXTENDED -eq 1 ]; then
     echo "NOT found."
     echo
     echo "wxWidgets 2.8 (GTK) libraries not found. Try: "
-    echo "  apt-get install libwxgtk2.8-0"
+    echo "  apt-get install libwxgtk2.8-0 libwxgtk2.8-dev"
     echo
     exit 7
   fi;
