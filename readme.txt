@@ -1,4 +1,4 @@
-Dradis version 2.3 installation
+Dradis version 2.4 installation
 -------------------------------
 
 General Information
@@ -28,8 +28,8 @@ The sqlite3 and wxruby gems are dependant on the following dlls to be in the
 Windows system32 directory: 
  - sqlite3.dll
  - msvcr71.dll
-  - msvcp71.dll
--  msvcrt.dll
+ - msvcp71.dll
+ - msvcrt.dll
 
 If installer did not have access to the system32 then these files need to be copied 
 manually. Simply copy them from the dradis install directory to the $windows\system32 
@@ -79,6 +79,9 @@ installation. After installing dradis, open a command prompt and type:
 
 After updating rubygems, there should be no problem in running the meta server
 with the standard ./script/server method.
+
+Note that the Meta-Server is provided as a separate package at 
+http://dradisframework.org
 
 Uninstall
 ---------

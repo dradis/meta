@@ -1,95 +1,49 @@
- dradis Framework 2.3 - Release Notes
+ Dradis Framework 2.4 - Release Notes
 =====================================
- -- version 2.3, August 5th, 2009 --
+ -- version 2.4, September 10th, 2009 --
   -- http://dradisframework.org --
 
 What is new
 -----------
 We are happy to announce that the following new features have made
-it into the version 2.3:
+it into the version 2.4:
 
-1. -- New component: the Meta-Server (beta) -- 
-A central project repository to hold all your projects, for future reference and
-for backup purposes.
+1. -- Plugin feedback
+We all have suffered the 'waiting forever' sindrom whenever something went
+wrong while using the Upload plugins. We have improved the feedback mechanism
+so you will be get useful information about the Upload process.
 
-The idea is to have the project management functions into a separate components
-so we can grow each component to better solve the problem they are trying to 
-solve and not clutter one component with functionality that should have been 
-provided in other.
+2. -- Plugin updates
+We are now using the Nmap::Parser (http://rubynmap.sourceforge.net/) library in
+the Nmap Upload plugin.
 
-In this early stage of development, the Meta-Server component is provided as a
-separate package. Download from: http://dradisframework.org/
+A new plugin to query the Open Source Vulnerability Database (OSVDB) has been
+added to the set of core plugins deployed with the framework.
 
-2. -- New plugin category: upload plugins --
-Import into dradis the contents of any file. We already have implementations 
-that let you upload Nmap and Nessus results.
-
-Even a plugin generator is also provided so you can create your own upload 
-plugins:
-
-$ ./script/generate upload_plugin nikto_upload
-
-More information on plugins is available at:
-  http://dradisframework.org/server_plugins.html
-
-3. -- New client-side extensions: Qualys and Nessus --
-We had the Nmap import extension, two new modules let you include Nessus and 
-Qualys results from the console client.
-
-4. -- Better Word reports --
-There is no excuse not to use the WordExport plugin now. You can generate your
-templates starting from any existing Word document and you will not need to 
-edit the XML code. Just using Word you can have your template running in a few
-minutes.
-
-To explain everything better, we have put together a tutorial on using the 
-plugin at:
-  http://dradisframework.org/WordExport_templates.html
-
-5. -- Project Management --
-It is possible to export your current project into a file in the file system to
-import it back at a later point.
-
-You can choose to export the contents of the database only or also include the
-attachments. Think about the implications, you can create a set of nodes and 
-notes that represent what you would normally do when testing 'web applications'
-save that set as a 'template' and use it from now on every time you need to 
-test a web application.
-
-Of course you can store you project into the Meta-Server and check out existing
-projects from it.
-
-6. -- Interface enhancements --
+3. -- Interface enhancements --
 We have added a few elements to the web interface to make the small every day
-tasks a bit easier. There is a new node filter in the tree that you can use to
-hide the nodes you are not interested in. There are other 'quick action' 
-buttons that let you expand/collapse/refresh the tree.
+tasks a bit easier:
+  ~ drag'n'drop for notes (so they can be moved across the nodes tree.
+  ~ a new *feedback* link has been added to the top-right corner to encourage
+    on-the-fly feedback from users finding bugs or requesting features while
+    using Dradis.
 
-We have also added a new button in the status bar that would present you with
-the latest feaures included in the current version of the framework so you can
-quickly learn how to make the most of the available functionality.
+4. -- Windows installer / Dependencies verification script
+Smarter and sexier, the new Windows installer makes use of the official Dradis
+icons, and takes even less time to complete the process.
+
+On the Linux front, verify.sh is a shell script that will point you what 
+dependencies you need to install in order to get Dradis up and running.
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.3.0-setup.exe, and the platform independent packages,
-dradis-v2.3.0.tar.bz2 and dradis-v2.3.0.tar.gz. This can all be
+dradis-v2.4.0-setup.exe, and the platform independent packages,
+dradis-v2.4.0.tar.bz2 and dradis-v2.4.0.tar.gz. This can all be
 downloaded from the website [i]. 
 
 For Linux prerequisite instructions please see [ii].
 
-
-Thank you
----------
-Thanks for all the feedback, ideas and support that has driven this
-release. It is a major incentive in moving this project forward.
-Special thanks go to:
-  - Daniel Bradberry from MWR InfoSecurity for hist project import/export 
-    implementation
-  - spinbad and his Nessus magic
-  - Abel Gomez and Christian Martorella of S21Sec for their client-side Qualys
-    and Nessus extensions
-  
 
 Getting involved
 ---------
