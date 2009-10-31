@@ -1,5 +1,5 @@
-Dradis version 2.4 installation
--------------------------------
+Dradis version 2.4.1 installation
+---------------------------------
 
 General Information
 -------------------
@@ -69,19 +69,6 @@ The client configuration is left as is.
 The installer creates short cuts to start the dradis command line client and the 
 graphical interface client in the Start Menu. 
 
-
-dradis Meta-Server
-------------------
-This is the newest component of the framework. It has been developed using 
-Rails 2.3.3. This version of rails would require you to upgrade your rubygems
-installation. After installing dradis, open a command prompt and type:
-  gem update --system
-
-After updating rubygems, there should be no problem in running the meta server
-with the standard ./script/server method.
-
-Note that the Meta-Server is provided as a separate package at 
-http://dradisframework.org
 
 Uninstall
 ---------
