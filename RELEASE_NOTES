@@ -1,6 +1,6 @@
- Dradis Framework 2.4 - Release Notes
+ Dradis Framework 2.4.1 - Release Notes
 =====================================
- -- version 2.4, September 10th, 2009 --
+ -- version 2.4.1, October 31st, 2009 --
   -- http://dradisframework.org --
 
 What is new
@@ -35,11 +35,22 @@ icons, and takes even less time to complete the process.
 On the Linux front, verify.sh is a shell script that will point you what 
 dependencies you need to install in order to get Dradis up and running.
 
+Bugs Fixed
+----------
+#2881746.- Nessus import multiple instance of each issue
+#2888245.- Exception when an attachment did not have extension
+#2889402.- WordExport debug code
+
+Known Issues
+------------
+Dradis requires Rake 0.8.7 or later. Please upgrade your Rake installation:
+$ gem install rake
+
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.4.0-setup.exe, and the platform independent packages,
-dradis-v2.4.0.tar.bz2 and dradis-v2.4.0.tar.gz. This can all be
+dradis-v2.4.1-setup.exe, and the platform independent packages,
+dradis-v2.4.1.tar.bz2 and dradis-v2.4.1.tar.gz. This can all be
 downloaded from the website [i]. 
 
 For Linux prerequisite instructions please see [ii].
