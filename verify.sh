@@ -59,7 +59,7 @@ else
   echo "NOT found."
   echo
   echo "Ruby interpreter not found. Try:"
-  echo "  apt-get install ruby irb rdoc ruby-dev libopenssl-ruby rake"
+  echo "  apt-get install ruby irb rdoc ruby-dev libopenssl-ruby"
   echo 
   exit 1
 fi;
@@ -101,6 +101,14 @@ which rake > /dev/null
 if [ $? -eq 0 ]; then
   RAKE_EXEC=`which rake`
   echo "found [" $RAKE_EXEC "]."
+  RAKE_VERSION=`rake --version | awk '{print $3}'`
+  RAKE_SATISFIED=`ruby -rrubygems -e "if (Gem::Requirement.create('>=0.8.7').satisfied_by?(Gem::Version.create('$RAKE_VERSION'))) then exit 0 else exit 1 end"`
+  if [ $? -eq 1 ]; then
+    echo "Although a version of Rake was found ($RAKE_VERSION), a newer version is required."
+    echo "Please upgrade Rake to 0.8.7. Try:"
+    echo "  gem install rake"
+    exit 41
+  fi;
 else
   echo "NOT found."
   echo
@@ -186,5 +194,5 @@ if [ -e "mkmf.log" ]; then
 fi;
 
 echo
-echo "Congratulations. You seem to be ready to run the dradis Framework. Enjoy!"
+echo "Congratulations. You seem to be ready to run the Dradis Framework. Enjoy!"
 echo
