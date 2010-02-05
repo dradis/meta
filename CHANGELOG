@@ -1,3 +1,17 @@
+v2.5 (5th of February 2010)
+ - improved Note editor (supports formatting)
+ - new HTML export plugin to generate reports in HTML format
+ - new Nikto Upload plugin: your favourite web server scanner output in Dradis.
+ - new Burp Upload plugin: you can now import your Burp Scanner results.
+ - improved 'First Time User Wizard' introduction
+ - keep track of all the activity with the built-in RSS feed
+ - new Rake task: dradis:backup
+ - Rake dradis:reset now creates a backup of the project by default
+ - Rake dradis:reset now clears the old log files
+ - the Nmap Upload plugin organizes the nodes in a more structured way
+ - upgraded libraries: ExtJS 3.0, Rails 2.3.5
+ - bugs fixed: #2936554, #2938593
+
 v2.4.1 (31st of October 2009)
  - server bugs fixed: #2881746, #2888245, #2889402
  - client bugs fixed: #2888411
