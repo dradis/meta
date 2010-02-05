@@ -14,7 +14,10 @@ is also a forum and a #dradis IRC channel at irc.freenode.org.
 
     http://dradisframework.org/community/
 
+Relese notes can be found in the RELEASE_NOTES document
 
+Installation Notes
+------------------
 The dradis installation gives the users the option to install the following
 components:
  - Ruby
