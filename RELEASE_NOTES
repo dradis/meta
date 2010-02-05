@@ -1,59 +1,58 @@
- Dradis Framework 2.4.1 - Release Notes
+ Dradis Framework 2.5 - Release Notes
 =====================================
- -- version 2.4.1, October 31st, 2009 --
+ -- version 2.5, February 5th, 2010 --
   -- http://dradisframework.org --
 
 What is new
 -----------
 We are happy to announce that the following new features have made
-it into the version 2.4:
+it into the version 2.5:
 
-1. -- Plugin feedback
-We all have suffered the 'waiting forever' sindrom whenever something went
-wrong while using the Upload plugins. We have improved the feedback mechanism
-so you will be get useful information about the Upload process.
+1. -- New First Time User Wizard 
+It explains the handful of contcepts every Dradis newcomer needs to ba aware of:
+  * Users and Paswords
+  * Interface elements description
+  * Plugins: types and examples
+  * How to make your notes ready for reporting
+  * Where to get help
 
 2. -- Plugin updates
-We are now using the Nmap::Parser (http://rubynmap.sourceforge.net/) library in
-the Nmap Upload plugin.
+There are a few new plugins:
+  * HTML Export: the first release of this new HTML reporting module.
+  * Nikto Upload: to import the results from your favourite web server scanner.
+  * Burp Upload: to use Burp Scanner XML output files
 
-A new plugin to query the Open Source Vulnerability Database (OSVDB) has been
-added to the set of core plugins deployed with the framework.
+We have updated the Nmap Upload plugin to better organize it's output.
 
 3. -- Interface enhancements --
-We have added a few elements to the web interface to make the small every day
-tasks a bit easier:
-  ~ drag'n'drop for notes (so they can be moved across the nodes tree.
-  ~ a new *feedback* link has been added to the top-right corner to encourage
-    on-the-fly feedback from users finding bugs or requesting features while
-    using Dradis.
+Some major works have been undertajen on the interface. A brand new 
+email-client layout has been adopted. Dradis now has a Note Preview panel for
+better accessibility to lengthy notes.
 
-4. -- Windows installer / Dependencies verification script
-Smarter and sexier, the new Windows installer makes use of the official Dradis
-icons, and takes even less time to complete the process.
+There is also a new Note Editor, bigger, simpler and easier to use. And we 
+support Textile markup! [i]
 
-On the Linux front, verify.sh is a shell script that will point you what 
-dependencies you need to install in order to get Dradis up and running.
+And finally an RSS feed, so you can get in a glance an idea of what the 
+evolution of the repository has been.
+
 
 Bugs Fixed
 ----------
-#2881746.- Nessus import multiple instance of each issue
-#2888245.- Exception when an attachment did not have extension
-#2889402.- WordExport debug code
+#2936554 - Attachment filename URL encoding 
+#2938593 - Nmap wrong port state reported
 
 Known Issues
 ------------
-Dradis requires Rake 0.8.7 or later. Please upgrade your Rake installation:
-$ gem install rake
+
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.4.1-setup.exe, and the platform independent packages,
-dradis-v2.4.1.tar.bz2 and dradis-v2.4.1.tar.gz. This can all be
-downloaded from the website [i]. 
+dradis-v2.5.0-setup.exe, and the platform independent packages,
+dradis-v2.5.0.tar.bz2 and dradis-v2.5.0.tar.gz. This can all be
+downloaded from the website [ii]. 
 
-For Linux prerequisite instructions please see [ii].
+For Linux prerequisite instructions please see [iii].
 
 
 Getting involved
@@ -65,5 +64,7 @@ dradis community forums:
 dradis development mailing list:
   https://lists.sourceforge.net/mailman/listinfo/dradis-devel 
 
-  [i] - http://dradisframework.org
- [ii] - http://dradisframework.org/install.html
+  [i] - http://redcloth.org/
+ [ii] - http://dradisframework.org
+[iii] - http://dradisframework.org/install.html
+[iii] - http://redcloth.org/
