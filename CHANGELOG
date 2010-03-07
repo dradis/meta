@@ -1,3 +1,8 @@
+v2.5.1 (7th of March 2010)
+ - various improvements oi the NotesBrowser
+ - upgraded library: ExtJS 3.1.1
+ - bugs fixed: #2964273, #2932569, #2963253
+
 v2.5 (5th of February 2010)
  - improved Note editor (supports formatting)
  - new HTML export plugin to generate reports in HTML format

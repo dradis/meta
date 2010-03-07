@@ -1,6 +1,6 @@
- Dradis Framework 2.5 - Release Notes
+ Dradis Framework 2.5.1 - Release Notes
 =====================================
- -- version 2.5, February 5th, 2010 --
+ -- version 2.5.1, March 7th, 2010 --
   -- http://dradisframework.org --
 
 What is new
@@ -38,8 +38,12 @@ evolution of the repository has been.
 
 Bugs Fixed
 ----------
-#2936554 - Attachment filename URL encoding 
-#2938593 - Nmap wrong port state reported
+         - bugs in ExtJS 3.0.0 fixed in 3.1.1
+         - improve the NotesBrowser to ensure it is always in sync with the 
+           server
+#2964273 - dynamically create the SSL certificate loading path
+#2932569 - improve the Nessus parser to detect edge cases
+#2963253 - fix spelling errors in the Wizard
 
 Known Issues
 ------------
