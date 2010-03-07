@@ -86,4 +86,4 @@ the Sqlite3.dll it is left to the user to remove these manually. This can be don
 - run "gem uninstall RedCloth" in the command line
 - run "gem uninstall rake" in the command line
 
-3rd of February 2010
+7th of March 2010

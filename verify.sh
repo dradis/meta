@@ -30,18 +30,18 @@ echo
 echo 
 
 EXTENDED=0
-echo "There are a number of verifications you can perform:"
-echo "  1) Standard: Ruby interpreter and database drivers (recommended)"
-echo "  2) Extended: Ruby interpreter, database drivers and GUI libraries"
-
-echo -e "What set of checks do you want to run? [1] \c"
-read CHOICE
-
-case $CHOICE in
-  2) EXTENDED=1
-esac
-
-echo
+#echo "There are a number of verifications you can perform:"
+#echo "  1) Standard: Ruby interpreter and database drivers (recommended)"
+#echo "  2) Extended: Ruby interpreter, database drivers and GUI libraries"
+#
+#echo -e "What set of checks do you want to run? [1] \c"
+#read CHOICE
+#
+#case $CHOICE in
+#  2) EXTENDED=1
+#esac
+#
+#echo
 if [ $EXTENDED -eq 1 ]; then
   echo "Running Extended checks."
 else
