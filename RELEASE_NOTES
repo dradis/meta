@@ -1,6 +1,6 @@
- Dradis Framework 2.5.1 - Release Notes
+ Dradis Framework 2.5.2 - Release Notes
 =====================================
- -- version 2.5.1, March 7th, 2010 --
+ -- version 2.5.2, May 18th, 2010 --
   -- http://dradisframework.org --
 
 What is new
@@ -44,6 +44,9 @@ Bugs Fixed
 #2964273 - dynamically create the SSL certificate loading path
 #2932569 - improve the Nessus parser to detect edge cases
 #2963253 - fix spelling errors in the Wizard
+#2974460 - improve the Nikto parser to detect the new XML format
+         - security patches. More info:
+             http://dradisframework.org/security_reports.html
 
 Known Issues
 ------------
@@ -52,8 +55,8 @@ Known Issues
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.5.0-setup.exe, and the platform independent packages,
-dradis-v2.5.0.tar.bz2 and dradis-v2.5.0.tar.gz. This can all be
+dradis-v2.5.2-setup.exe, and the platform independent packages,
+dradis-v2.5.2.tar.bz2 and dradis-v2.5.2.tar.gz. This can all be
 downloaded from the website [ii]. 
 
 For Linux prerequisite instructions please see [iii].
