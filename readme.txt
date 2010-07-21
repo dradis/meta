@@ -70,7 +70,7 @@ file. RedCloth is used to render the mark-up styled notes to HTML in the browser
 
 dradis server
 -------------
-All the dardis sever files are copied to the installation folder. 
+All the dradis sever files are copied to the installation folder. 
 The sqlite database is created by calling the rake function. 
 The rest of the server configuration is left as is. 
 The installer creates a short cut to start the server in the Start Menu. 
