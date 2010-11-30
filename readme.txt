@@ -1,12 +1,12 @@
-Dradis version 2.5 installation
+Dradis version 2.6 installation
 ---------------------------------
 
 General Information
 -------------------
 
-dradis is an open source tool for sharing information.
+Dradis is an open source tool for sharing information.
 
-The official home of dradis is:
+The official home of the Dradis Framework is:
     http://dradisframework.org/
 
 Please query the website for information and documentation on the system. There 
@@ -20,70 +20,62 @@ Installation Notes
 ------------------
 The dradis installation gives the users the option to install the following
 components:
- - Ruby
- - sqlite3 files and sqlite3-ruby gem 
- - rake gem
- - rack gem
+ - Ruby 1.9
+ - Dradis Framework Core
+ - The SQLite3 library and sqlite3-ruby gem 
  - RedCloth gem
- - dradis server
+ - Bundler
 
 Note when installing as a limited access user:
-The sqlite3 gem are dependant on the following dlls to be in the Windows 
-system32 directory: 
+The sqlite3 gem are dependant on the following dlls to be in the Windows\system32 
+directory or the Ruby\bin directory: 
  - sqlite3.dll
  - msvcr71.dll
  - msvcp71.dll
  - msvcrt.dll
 
 If installer did not have access to the system32 then these files need to be copied 
-manually. Simply copy them from the dradis install directory to the $windows\system32 
-folder.
+manually. Simply copy them from the Dradis install directory to the %WINDIR%\system32 
+folder or the c:\Ruby192\bin directory.
 
 Ruby
 ----
-The ruby installation downloads the ruby one click installer and executes it. 
-The ruby installation is independent of the dradis installation.
+The ruby installation downloads the Ruby one-click installer and executes it. 
+The ruby installation is independent of the Dradis installation.
+For best results make sure you tick the *Add Ruby executables to your PATH* checkbox.
 
-
-sqlite3
+SQLite3
 -------
 The installer copies the sqlite3.dll file to the $WINDOWS\system32 folder. 
-It also copies the sqlite3-ruby gem (version 1.2.3) binary file to the 
+It also copies the sqlite3-ruby gem (version 1.3.2) binary file to the 
 installation folder and it then installs the gem locally. 
-
-rake
-----
-The installer uses a the rake-0.8.7.gem file to install the rake gem locally.
-
-
-rack
-----
-The rack gem is installed locally from the rack-1.1.0.gem file. Rack is required
-by Rails
 
 
 RedCloth
 --------
-The RedCloth gem is installed locally from the RedCloth-4.2.2-x86-mswin32-60.gem 
+The RedCloth gem is installed locally from the RedCloth-4.2.4pre3-x86-mingw32.gem 
 file. RedCloth is used to render the mark-up styled notes to HTML in the browser.
 
 
-dradis server
+Dradis Framework Core
 -------------
 All the dradis sever files are copied to the installation folder. 
-The sqlite database is created by calling the rake function. 
+If the Initialise Dradis checkbox is ticked, the environment is configured and 
+the SQLite3 database is re-created.
 The rest of the server configuration is left as is. 
 The installer creates a short cut to start the server in the Start Menu. 
 
 
 Uninstall
 ---------
-The uninstaller removes the dradis client and the dradis server from the 
-local system. Because other applications might be dependent on the gems or 
-the Sqlite3.dll it is left to the user to remove these manually. This can be done with by following these steps:
-- run "gem uninstall sqlite3-ruby" in the command line
-- run "gem uninstall rack" in the command line
-- run "gem uninstall RedCloth" in the command line
-- run "gem uninstall rake" in the command line
+The uninstaller removes the Dradis components from the local system. 
 
-18th of May 2010
+Because other applications might be dependent on the Ruby gems or the Sqlite3.dll 
+it is left to the user to remove these manually. 
+
+This can be done with by following these steps:
+- run "gem uninstall sqlite3-ruby" in the command line
+- run "gem uninstall RedCloth" in the command line
+- run "gem uninstall Bundler" in the command line
+
+30th of November 2010
