@@ -1,52 +1,34 @@
- Dradis Framework 2.5.2 - Release Notes
+ Dradis Framework 2.6 - Release Notes
 =====================================
- -- version 2.5.2, May 18th, 2010 --
+ -- version 2.6, Nov 30th, 2010 --
   -- http://dradisframework.org --
 
 What is new
 -----------
-We are happy to announce that the following new features have made
-it into the version 2.5:
+This is a performance improvement release.
 
-1. -- New First Time User Wizard 
-It explains the handful of contcepts every Dradis newcomer needs to ba aware of:
-  * Users and Paswords
-  * Interface elements description
-  * Plugins: types and examples
-  * How to make your notes ready for reporting
-  * Where to get help
+Some issues were spoted in the latest 2.5 branch where users accessing a remote
+Dradis server would experience performance degradation.
 
-2. -- Plugin updates
-There are a few new plugins:
-  * HTML Export: the first release of this new HTML reporting module.
-  * Nikto Upload: to import the results from your favourite web server scanner.
-  * Burp Upload: to use Burp Scanner XML output files
+We have done a few things:
+* Upgraded from Rails 2 to Rails 3
+* Upgraded ExtJS (our GUI library) to the latest version available: 3.3
+* Perform asset catching to speed up response
 
-We have updated the Nmap Upload plugin to better organize it's output.
+With all these improvements Dradis now earns a Grade B on YSlow when running
+in production mode.
 
-3. -- Interface enhancements --
-Some major works have been undertajen on the interface. A brand new 
-email-client layout has been adopted. Dradis now has a Note Preview panel for
-better accessibility to lengthy notes.
-
-There is also a new Note Editor, bigger, simpler and easier to use. And we 
-support Textile markup! [i]
-
-And finally an RSS feed, so you can get in a glance an idea of what the 
-evolution of the repository has been.
+Apart from improving the overall performance we have also added some new 
+content to help first-time users learn to use the interface and how to format
+notes.
 
 
 Bugs Fixed
 ----------
-         - bugs in ExtJS 3.0.0 fixed in 3.1.1
-         - improve the NotesBrowser to ensure it is always in sync with the 
-           server
-#2964273 - dynamically create the SSL certificate loading path
-#2932569 - improve the Nessus parser to detect edge cases
-#2963253 - fix spelling errors in the Wizard
-#2974460 - improve the Nikto parser to detect the new XML format
-         - security patches. More info:
-             http://dradisframework.org/security_reports.html
+#3021312 - Renaming file error
+#3030629 - Attachments directory permissions
+#3076709 - Greyed out 'Export' menu on Ruby 1.9 
+
 
 Known Issues
 ------------
@@ -55,11 +37,11 @@ Known Issues
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.5.2-setup.exe, and the platform independent packages,
-dradis-v2.5.2.tar.bz2 and dradis-v2.5.2.tar.gz. This can all be
-downloaded from the website [ii]. 
+dradis-v2.6.0-setup.exe, and the platform independent packages,
+dradis-v2.6.0.tar.bz2 and dradis-v2.6.0.tar.gz. This can all be
+downloaded from the website [i]. 
 
-For Linux prerequisite instructions please see [iii].
+For Linux prerequisite instructions please see [ii].
 
 
 Getting involved
@@ -71,7 +53,5 @@ dradis community forums:
 dradis development mailing list:
   https://lists.sourceforge.net/mailman/listinfo/dradis-devel 
 
-  [i] - http://redcloth.org/
- [ii] - http://dradisframework.org
-[iii] - http://dradisframework.org/install.html
-[iii] - http://redcloth.org/
+ [i] - http://dradisframework.org
+[ii] - http://dradisframework.org/install.html
