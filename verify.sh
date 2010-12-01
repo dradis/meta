@@ -186,5 +186,10 @@ if [ -e "mkmf.log" ]; then
 fi;
 
 echo
-echo "Congratulations. You seem to be ready to run the Dradis Framework. Enjoy!"
+echo "Congratulations. You seem to be ready to run the Dradis Framework."
+echo
+echo "Remember that you still need to go to the server/ folder and run:"
+echo -e "\tbundle install"
+echo
+echo "Enjoy!"
 echo
