@@ -16,8 +16,21 @@ is also a forum and a #dradis IRC channel at irc.freenode.org.
 
 Relese notes can be found in the RELEASE_NOTES document
 
-Installation Notes
-------------------
+1. Installation Notes (*nix)
+---------------------------
+Make sure you have all the dependencies:
+$ ./verify.sh
+$ bundle install
+
+Reset the environment:
+$ rake dradis:reset
+
+That's it, run the server:
+$ ruby script\rails server
+
+
+2. Installation Notes (Windows)
+-------------------------------
 The dradis installation gives the users the option to install the following
 components:
  - Ruby 1.9
@@ -38,27 +51,27 @@ If installer did not have access to the system32 then these files need to be cop
 manually. Simply copy them from the Dradis install directory to the %WINDIR%\system32 
 folder or the c:\Ruby192\bin directory.
 
-Ruby
-----
+2.1. Ruby
+---------
 The ruby installation downloads the Ruby one-click installer and executes it. 
 The ruby installation is independent of the Dradis installation.
 For best results make sure you tick the *Add Ruby executables to your PATH* checkbox.
 
-SQLite3
--------
+2.2. SQLite3
+------------
 The installer copies the sqlite3.dll file to the $WINDOWS\system32 folder. 
 It also copies the sqlite3-ruby gem (version 1.3.2) binary file to the 
 installation folder and it then installs the gem locally. 
 
 
-RedCloth
---------
+2.3. RedCloth
+-------------
 The RedCloth gem is installed locally from the RedCloth-4.2.4pre3-x86-mingw32.gem 
 file. RedCloth is used to render the mark-up styled notes to HTML in the browser.
 
 
-Dradis Framework Core
--------------
+2.4. Dradis Framework Core
+--------------------------
 All the dradis sever files are copied to the installation folder. 
 If the Initialise Dradis checkbox is ticked, the environment is configured and 
 the SQLite3 database is re-created.
@@ -66,8 +79,8 @@ The rest of the server configuration is left as is.
 The installer creates a short cut to start the server in the Start Menu. 
 
 
-Uninstall
----------
+2.5. Uninstall
+--------------
 The uninstaller removes the Dradis components from the local system. 
 
 Because other applications might be dependent on the Ruby gems or the Sqlite3.dll 
