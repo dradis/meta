@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# dradis Framework dependencies verification script
+# Dradis Framework dependencies verification script
 #
 # Description:
 #   This script will try to determine whether all the dependencies required to
-# use the dradis Framework are present in the system providing hints on how to 
+# use the Dradis Framework are present in the system providing hints on how to 
 # install the missing dependencies. The system will NOT be modified by the 
 # script.
 # 
@@ -17,11 +17,11 @@
 # Copyright: Daniel Martin Gomez <etd[-at-]nomejortu.com>
 
 echo
-echo "dradis Framework dependencies verification script"
+echo "Dradis Framework dependencies verification script"
 echo "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --"
 echo 
 echo "  This script will try to determine whether all the dependencies required to"
-echo "use the dradis Framework are present in the system providing hints on how to"
+echo "use the Dradis Framework are present in the system providing hints on how to"
 echo "install the missing dependencies. The system will NOT be modified by the"
 echo "script."
 echo
@@ -95,25 +95,17 @@ else
 fi;
 
 
-# verify rake
-echo -n "Looking for the 'rake' command... "
-which rake > /dev/null
+# verify Bundler 
+echo -n "Looking for the Ruby Bundler... "
+which bundle > /dev/null
 if [ $? -eq 0 ]; then
-  RAKE_EXEC=`which rake`
-  echo "found [" $RAKE_EXEC "]."
-  RAKE_VERSION=`rake --version | awk '{print $3}'`
-  RAKE_SATISFIED=`ruby -rrubygems -e "if (Gem::Requirement.create('>=0.8.7').satisfied_by?(Gem::Version.create('$RAKE_VERSION'))) then exit 0 else exit 1 end"`
-  if [ $? -eq 1 ]; then
-    echo "Although a version of Rake was found ($RAKE_VERSION), a newer version is required."
-    echo "Please upgrade Rake to 0.8.7. Try:"
-    echo "  gem install rake"
-    exit 41
-  fi;
+  BUNDLER_EXEC=`which bundle`
+  echo "found [" $BUNDLER_EXEC "]."
 else
   echo "NOT found."
   echo
-  echo "rake not found. Try:"
-  echo "  gem install rake"
+  echo "Bundler not found. Try:"
+  echo "  gem install bundler"
   echo 
   exit 4
 fi;
