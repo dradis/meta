@@ -54,9 +54,9 @@ echo -n "Looking for Ruby interpreter... "
 which ruby > /dev/null
 if [ $? -eq 0 ]; then
   RUBY_EXEC=`which ruby`
-  echo "found [" $RUBY_EXEC "]."
+  echo -e 'found [\E[32;40m' $RUBY_EXEC '\E[0m].'
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "Ruby interpreter not found. Try:"
   echo "  apt-get install ruby irb rdoc ruby-dev libopenssl-ruby"
@@ -71,7 +71,7 @@ ruby -rmkmf -e nil 2> /dev/null
 if [ $? -eq 0 ]; then
   echo "found."
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "Ruby development libraries not found. Try:"
   echo "  apt-get install ruby-dev libopenssl-ruby"
@@ -84,9 +84,9 @@ echo -n "Looking for RubyGems and the 'gem' command... "
 which gem > /dev/null
 if [ $? -eq 0 ]; then
   GEM_EXEC=`which gem`
-  echo "found [" $GEM_EXEC "]."
+  echo -e 'found [\E[32;40m' $GEM_EXEC '\E[0m].'
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "RubyGems not found. Try:"
   echo "  apt-get install rubygems"
@@ -100,9 +100,9 @@ echo -n "Looking for the Ruby Bundler... "
 which bundle > /dev/null
 if [ $? -eq 0 ]; then
   BUNDLER_EXEC=`which bundle`
-  echo "found [" $BUNDLER_EXEC "]."
+  echo -e 'found [\E[32;40m' $BUNDLER_EXEC '\E[0m].'
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "Bundler not found. Try:"
   echo "  gem install bundler"
@@ -112,12 +112,12 @@ fi;
 
 
 # verify SQLite3 libraries
-echo -n "Looking for SQLite3 libraries... "
+echo -n "Looking for the SQLite3 libraries... "
 ruby -rmkmf -e "if (have_header( 'sqlite3.h' ) && have_library( 'sqlite3', 'sqlite3_open' )) then exit 0 else exit 1 end" > /dev/null
 if [ $? -eq 0 ]; then
   echo "found."
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "SQLite3 libraries not found. Try: "
   echo "  apt-get install libsqlite3-0 libsqlite3-dev"
@@ -130,9 +130,9 @@ echo -n "Looking for the SQLite3 ruby gem [sqlite3-ruby]... "
 ruby -rrubygems -e "gem 'sqlite3-ruby', '>=1.2.4'" 2> /dev/null
 if [ $? -eq 0 ]; then
   SQLITERUBY_VERSION=`ruby -rrubygems -e "require 'sqlite3/version'; puts SQLite3::Version::STRING"`
-  echo "found (v"$SQLITERUBY_VERSION")."
+  echo -e 'found (\E[32;40mv'$SQLITERUBY_VERSION'\E[0m).'
 else
-  echo "NOT found."
+  echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "SQLite3 ruby gem (sqlite3-ruby [>= 1.2.4]) not found. Try: "
   echo "  gem install sqlite3-ruby"
@@ -154,7 +154,7 @@ if [ $EXTENDED -eq 1 ]; then
   if [ $? -eq 0 ]; then
     echo "found."
   else
-    echo "NOT found."
+    echo -e '\E[31;40mNOT found\E[0m'
     echo
     echo "wxWidgets 2.8 (GTK) libraries not found. Try: "
     echo "  apt-get install libwxgtk2.8-0 libwxgtk2.8-dev"
@@ -168,9 +168,9 @@ if [ $EXTENDED -eq 1 ]; then
   ruby -rrubygems -e "gem 'wxruby', '>=1.9.9'" 2> /dev/null
   if [ $? -eq 0 ]; then
     WXRUBY_VERSION=`ruby -rrubygems -e "require 'wx'; puts Wxruby2::WXRUBY_VERSION"`
-    echo "found (v"$WXRUBY_VERSION")."
+    echo -e 'found (\E[32;40mv'$WXRUBY_VERSION'\E[0m).'
   else
-    echo "NOT found."
+    echo -e '\E[31;40mNOT found\E[0m'
     echo
     echo "wxWidgets ruby gem (wxruby [>=1.9.9]) not found. Try: "
     echo "  gem install wxruby"
