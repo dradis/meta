@@ -91,4 +91,4 @@ This can be done with by following these steps:
 - run "gem uninstall RedCloth" in the command line
 - run "gem uninstall Bundler" in the command line
 
-30th of November 2010
+2nd of December 2010
