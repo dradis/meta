@@ -1,8 +1,15 @@
-Dradis version 2.6 installation
----------------------------------
+0. In this document
+===============================================================================
+  1. General Information
+  2. Installation Notes (*nix)
+  3. Installation Notes (Windows)
+  4. Running Dradis
 
-General Information
--------------------
+Dradis 2.6 - 2nd of December 2010
+
+
+1. General Information
+===============================================================================
 
 Dradis is an open source tool for sharing information.
 
@@ -16,8 +23,9 @@ is also a forum and a #dradis IRC channel at irc.freenode.org.
 
 Relese notes can be found in the RELEASE_NOTES document
 
+
 1. Installation Notes (*nix)
----------------------------
+===============================================================================
 Make sure you have all the dependencies:
 $ ./verify.sh
 $ bundle install
@@ -30,7 +38,7 @@ $ ruby script\rails server
 
 
 2. Installation Notes (Windows)
--------------------------------
+===============================================================================
 The dradis installation gives the users the option to install the following
 components:
  - Ruby 1.9
@@ -91,4 +99,40 @@ This can be done with by following these steps:
 - run "gem uninstall RedCloth" in the command line
 - run "gem uninstall Bundler" in the command line
 
-2nd of December 2010
+
+3. Running Dradis
+===============================================================================
+
+3.1 Reset the environment
+-------------------------
+The Dradis *reset* script will download and install all the necessary libraries 
+for you the first time you run it.
+
+In Windows, there is a reset link in the Start menu group or you can go to the 
+installation folder and run:
+
+    reset.bat 
+
+In *NIX simply run:
+
+    reset.sh 
+
+The script will use Bundler to install all the dependencies listed in 
+./server/Gemfile and will set up the environment for first use.
+
+3.2 Launch the server
+---------------------
+In Windows use the start server link or go to the Dradis folder and run:
+
+    start.bat 
+
+In *NIX just run:
+
+    start.sh 
+
+You can verify that everything is running as it should by pointing your browser to:
+
+https://localhost:3004/
+
+For more information regarding Dradis startup visit:
+  http://dradisframework.org/configure.html
