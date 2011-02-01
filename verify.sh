@@ -95,19 +95,43 @@ else
 fi;
 
 
-# verify Bundler 
-echo -n "Looking for the Ruby Bundler... "
-which bundle > /dev/null
+# verify Bundler  gem
+echo -n "Looking for the Ruby Bundler gem [bundler]... "
+ruby -rrubygems -e "gem 'bundler', '~> 1.0'" 2> /dev/null
 if [ $? -eq 0 ]; then
-  BUNDLER_EXEC=`which bundle`
-  echo -e 'found [\E[32;40m' $BUNDLER_EXEC '\E[0m].'
+  BUNDLER_VERSION=`ruby -rrubygems -e "require 'bundler/version'; puts Bundler::VERSION"`
+  echo -e 'found [ \E[32;40mv'$BUNDLER_VERSION'\E[0m ].'
 else
   echo -e '\E[31;40mNOT found\E[0m'
   echo
-  echo "Bundler not found. Try:"
+  echo "Bundler ruby gem (bundler [~> 1.0]) not found. Try: "
   echo "  gem install bundler"
   echo 
   exit 4
+fi;
+
+
+# verify Bundler binary
+echo "Looking for the Ruby Bundler binary... "
+echo -e -n '  ** locating using the PATH variable... '
+which bundle > /dev/null
+if [ $? -eq 0 ]; then
+  BUNDLER_EXEC=`which bundle`
+  BUNDLER_IN_PATH=1
+  echo -e 'found [\E[32;40m' $BUNDLER_EXEC '\E[0m].'
+else
+  BUNDLER_IN_PATH=0
+  echo -e '\E[31;40mNOT found\E[0m'
+  echo -e -n '  ** locating using RubyGems... '
+  GEM_BINDIR=`ruby -rrubygems -e "puts Gem::bindir"`
+  if [ -x $GEM_BINDIR'/bundle' ]; then
+    BUNDLER_EXEC=$GEM_BINDIR'/bundle'
+    echo -e 'found [\E[32;40m' $BUNDLER_EXEC '\E[0m].'
+  else
+    echo '\E[31;40mNOT found.\E[0m Unable to locate Bundler binary.'
+    echo 
+    exit 5
+  fi;
 fi;
 
 
@@ -122,7 +146,7 @@ else
   echo "SQLite3 libraries not found. Try: "
   echo "  apt-get install libsqlite3-0 libsqlite3-dev"
   echo
-  exit 5
+  exit 6
 fi;
 
 # verify SQLite3 bindings for Ruby
@@ -130,14 +154,14 @@ echo -n "Looking for the SQLite3 ruby gem [sqlite3-ruby]... "
 ruby -rrubygems -e "gem 'sqlite3-ruby', '>=1.2.4'" 2> /dev/null
 if [ $? -eq 0 ]; then
   SQLITERUBY_VERSION=`ruby -rrubygems -e "require 'sqlite3/version'; puts SQLite3::Version::STRING"`
-  echo -e 'found (\E[32;40mv'$SQLITERUBY_VERSION'\E[0m).'
+  echo -e 'found [ \E[32;40mv'$SQLITERUBY_VERSION'\E[0m ].'
 else
   echo -e '\E[31;40mNOT found\E[0m'
   echo
   echo "SQLite3 ruby gem (sqlite3-ruby [>= 1.2.4]) not found. Try: "
   echo "  gem install sqlite3-ruby"
   echo
-  exit 6
+  exit 7
 fi;
 
 if [ $EXTENDED -eq 1 ]; then 
@@ -159,7 +183,7 @@ if [ $EXTENDED -eq 1 ]; then
     echo "wxWidgets 2.8 (GTK) libraries not found. Try: "
     echo "  apt-get install libwxgtk2.8-0 libwxgtk2.8-dev"
     echo
-    exit 7
+    exit 8
   fi;
 
 
@@ -175,7 +199,7 @@ if [ $EXTENDED -eq 1 ]; then
     echo "wxWidgets ruby gem (wxruby [>=1.9.9]) not found. Try: "
     echo "  gem install wxruby"
     echo
-    exit 8
+    exit 9
   fi;
 
 fi;
@@ -189,7 +213,11 @@ echo
 echo "Congratulations. You seem to be ready to run the Dradis Framework."
 echo
 echo "Remember that you still need to go to the server/ folder and run:"
+if [ $BUNDLER_IN_PATH  -eq 1 ]; then
 echo -e "\tbundle install"
+else
+echo -e "\t$BUNDLER_EXEC install"
+fi;
 echo
 echo "Enjoy!"
 echo
