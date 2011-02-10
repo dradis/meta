@@ -13,4 +13,4 @@
 # sorry folks, nothing smart going on here
 RAILS_ENV=production
 cd server
-ruby script\rails server
+ruby script/rails server
