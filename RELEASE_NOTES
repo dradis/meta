@@ -1,34 +1,21 @@
- Dradis Framework 2.6 - Release Notes
-=====================================
- -- version 2.6, Dec 2nd, 2010 --
+ Dradis Framework 2.6.1 - Release Notes
+=======================================
+ -- version 2.6.1, Feb 11th, 2011 --
   -- http://dradisframework.org --
 
 What is new
 -----------
-This is a performance improvement release.
+Several minor fixes have been introduced in this release:
 
-Some issues were spoted in the latest 2.5 branch where users accessing a remote
-Dradis server would experience performance degradation.
-
-We have done a few things:
-* Upgraded from Rails 2 to Rails 3
-* Upgraded ExtJS (our GUI library) to the latest version available: 3.3
-* Perform asset catching to speed up response
-
-With all these improvements Dradis now earns a Grade B on YSlow when running
-in production mode.
-
-Apart from improving the overall performance we have also added some new 
-content to help first-time users learn to use the interface and how to format
-notes.
+* Update Rails to 3.0.4 and RedCloth to 4.2.6
+* Update the SSL certificate for 2011 (see ./server/conf/ssl/README)
+* Try to better deal with the way Burp Scanner output files use null bytes
+* Improve verify.sh to find Bundler even when not in the PATH
+* Fix the start.sh script to use UNIX forward slash instead of Windows
 
 
 Bugs Fixed
 ----------
-#3021312 - Renaming file error
-#3030629 - Attachments directory permissions
-#3076709 - Greyed out 'Export' menu on Ruby 1.9 
-
 
 Known Issues
 ------------
@@ -37,20 +24,20 @@ Known Issues
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.6.0-setup.exe, and the platform independent packages,
-dradis-v2.6.0.tar.bz2 and dradis-v2.6.0.tar.gz. This can all be
+dradis-v2.6.1-setup.exe, and the platform independent packages,
+dradis-v2.6.1.tar.bz2 and dradis-v2.6.1.tar.gz. This can all be
 downloaded from the website [i]. 
 
-For Linux prerequisite instructions please see [ii].
+For Linux prerequisite instructions please see readme.txt or [ii].
 
 
 Getting involved
 ---------
 IRC
   #dradis in irc.freenode.org
-dradis community forums: 
+Dradis community forums: 
   http://dradisframework.org/community/
-dradis development mailing list:
+Dradis development mailing list:
   https://lists.sourceforge.net/mailman/listinfo/dradis-devel 
 
  [i] - http://dradisframework.org
