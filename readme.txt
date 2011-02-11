@@ -5,7 +5,7 @@
   3. Installation Notes (Windows)
   4. Running Dradis
 
-Dradis 2.6 - 2nd of December 2010
+Dradis 2.6.1 - 11th of February 2011
 
 
 1. General Information
@@ -28,13 +28,8 @@ Relese notes can be found in the RELEASE_NOTES document
 ===============================================================================
 Make sure you have all the dependencies:
 $ ./verify.sh
-$ bundle install
 
-Reset the environment:
-$ rake dradis:reset
-
-That's it, run the server:
-$ ruby script\rails server
+See section 4. Running Dradis
 
 
 2. Installation Notes (Windows)
@@ -44,7 +39,6 @@ components:
  - Ruby 1.9
  - Dradis Framework Core
  - The SQLite3 library and sqlite3-ruby gem 
- - RedCloth gem
  - Bundler
 
 Note when installing as a limited access user:
@@ -55,12 +49,12 @@ directory or the Ruby\bin directory:
  - msvcp71.dll
  - msvcrt.dll
 
-If installer did not have access to the system32 then these files need to be copied 
-manually. Simply copy them from the Dradis install directory to the %WINDIR%\system32 
-folder or the c:\Ruby192\bin directory.
+If the installer did not have access to the system32 then these files need to be 
+copied manually. Simply copy them from the Dradis install directory to the 
+%WINDIR%\system32 folder or the c:\Ruby192\bin directory.
 
-2.1. Ruby
----------
+2.1. Ruby Installer
+-------------------
 The ruby installation downloads the Ruby one-click installer and executes it. 
 The ruby installation is independent of the Dradis installation.
 For best results make sure you tick the *Add Ruby executables to your PATH* checkbox.
@@ -72,22 +66,7 @@ It also copies the sqlite3-ruby gem (version 1.3.2) binary file to the
 installation folder and it then installs the gem locally. 
 
 
-2.3. RedCloth
--------------
-The RedCloth gem is installed locally from the RedCloth-4.2.4pre3-x86-mingw32.gem 
-file. RedCloth is used to render the mark-up styled notes to HTML in the browser.
-
-
-2.4. Dradis Framework Core
---------------------------
-All the dradis sever files are copied to the installation folder. 
-If the Initialise Dradis checkbox is ticked, the environment is configured and 
-the SQLite3 database is re-created.
-The rest of the server configuration is left as is. 
-The installer creates a short cut to start the server in the Start Menu. 
-
-
-2.5. Uninstall
+2.4. Uninstall
 --------------
 The uninstaller removes the Dradis components from the local system. 
 
