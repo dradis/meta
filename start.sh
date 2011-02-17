@@ -8,9 +8,8 @@
 # and appearing in the file LICENSE.txt included in the packaging of
 # this file.
 #
-# Copyright: Daniel Martin Gomez <etd[-at-]nomejortu.com>
 
 # sorry folks, nothing smart going on here
-RAILS_ENV=production
+export RAILS_ENV=production
 cd server
 ruby script/rails server
