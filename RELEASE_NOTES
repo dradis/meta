@@ -1,31 +1,62 @@
- Dradis Framework 2.6.1 - Release Notes
+ Dradis Framework 2.7 - Release Notes
 =======================================
- -- version 2.6.1, Feb 11th, 2011 --
+ -- version 2.7, Apr 19th, 2011 --
   -- http://dradisframework.org --
 
 What is new
 -----------
-Several minor fixes have been introduced in this release:
+We have a lot of new plugins in this release
+* Metasploit import: exploit away with your favourite framework and then import
+seamlessly into Dradis to collate results and merge with information from other
+tools. Kudos to @sussurro
 
-* Update Rails to 3.0.4 and RedCloth to 4.2.6
-* Update the SSL certificate for 2011 (see ./server/conf/ssl/README)
-* Try to better deal with the way Burp Scanner output files use null bytes
-* Improve verify.sh to find Bundler even when not in the PATH
-* Fix the start.sh script to use UNIX forward slash instead of Windows
+* NeXpose (.xml), OpenVAS (.xml) and w3af (.xml) output can be uploaded into
+Dradis thanks to the amazing work by @raesene
+
+* SureCheck is a great build review tool by Wildcroft Security 
+(http://www.wildcroftsecurity.com/) and thanks to @werrett you can now import 
+its (.sc) files into Dradis.
+
+* The guys at the Web Exploitation Framework (wXf) team created an upload for 
+Dradis.
+
+Some of our good old plugins have been updated: 
+* Nessus plugin supports .nessus v2 format
+* Vuln::DB import plugin updated to work with the latest release (http://securityroots.com/vulndb/)
+
+Along with the changes in the plugin themselves Dradis 2.7 introduces the new 
+Configuration Manager (browse to /configurations once the server is running).
+All the configuration settings for every plugin can be accessed and edited 
+through the new config manager. Forget the .yml files and embrace the new web
+interface.
+
+We have also improved the command line interface to use Thor. Run: thor -T to 
+see all the available tasks for importing, uploading and managing the 
+information in your Dradis repository.
+
+Finally we have been working hard on the new Upload Manager, it will let you 
+upload *huge* files while keeping you posted of the status of the processing 
+that is being done internally. You can see how the plugins are working their 
+magic in real time through the new Ajax-enabled interface.
 
 
 Bugs Fixed
 ----------
+#2888332 - Can't upload attachments with certain names
+#2973256 - New category + note assignment creates havoc
 
 Known Issues
 ------------
+* In the Windows installer the reset.bat script contains a hard-coded PATH to
+c:\Ruby187. If you installed ruby in a different location you will need to
+adjust this file.
 
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.6.1-setup.exe, and the platform independent packages,
-dradis-v2.6.1.tar.bz2 and dradis-v2.6.1.tar.gz. This can all be
+dradis-v2.7.0-setup.exe, and the platform independent packages,
+dradis-v2.7.0.tar.bz2 and dradis-v2.7.0.tar.gz. This can all be
 downloaded from the website [i]. 
 
 For Linux prerequisite instructions please see readme.txt or [ii].
