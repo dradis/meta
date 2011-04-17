@@ -1,3 +1,19 @@
+v2.7 (19th of April 2011)
+ - Improved command line API with Thor (thor -T)
+ - New Configuration Manager
+ - New plugins:
+   * Metasploit import
+   * NeXpose (.xml) upload
+   * OpenVAS (.xml) upload
+   * SureCheck (.sc) upload
+   * w3af (.xml) upload
+   * Web Exploitation Framework (wXf) upload
+ - Updated plugins:
+   * Nessus plugin supports .nessus v2
+   * Vuln::DB import plugin updated to work with the latest release
+ - Bugs fixed: #2888332, #2973256
+
+
 v2.6.1 (11th of February 2011)
  - Fixed a 'back slash' vs 'forward slash' issue in start.sh
  - Smarten up verify.sh to find the Bundler binary

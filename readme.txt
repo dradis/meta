@@ -5,7 +5,7 @@
   3. Installation Notes (Windows)
   4. Running Dradis
 
-Dradis 2.6.1 - 11th of February 2011
+Dradis 2.7 - 19th of April 2011
 
 
 1. General Information
@@ -36,9 +36,9 @@ See section 4. Running Dradis
 ===============================================================================
 The dradis installation gives the users the option to install the following
 components:
- - Ruby 1.9
+ - Ruby 1.8.7
  - Dradis Framework Core
- - The SQLite3 library and sqlite3-ruby gem 
+ - The SQLite3 library and sqlite3 gem 
  - Bundler
 
 Note when installing as a limited access user:
@@ -51,7 +51,7 @@ directory or the Ruby\bin directory:
 
 If the installer did not have access to the system32 then these files need to be 
 copied manually. Simply copy them from the Dradis install directory to the 
-%WINDIR%\system32 folder or the c:\Ruby192\bin directory.
+%WINDIR%\system32 folder or the c:\Ruby187\bin directory.
 
 2.1. Ruby Installer
 -------------------
@@ -62,8 +62,8 @@ For best results make sure you tick the *Add Ruby executables to your PATH* chec
 2.2. SQLite3
 ------------
 The installer copies the sqlite3.dll file to the $WINDOWS\system32 folder. 
-It also copies the sqlite3-ruby gem (version 1.3.2) binary file to the 
-installation folder and it then installs the gem locally. 
+It also copies the sqlite3 gem (version 1.3.3) binary file to the installation
+folder and it then installs the gem locally. 
 
 
 2.4. Uninstall
@@ -74,7 +74,7 @@ Because other applications might be dependent on the Ruby gems or the Sqlite3.dl
 it is left to the user to remove these manually. 
 
 This can be done with by following these steps:
-- run "gem uninstall sqlite3-ruby" in the command line
+- run "gem uninstall sqlite3" in the command line
 - run "gem uninstall RedCloth" in the command line
 - run "gem uninstall Bundler" in the command line
 
