@@ -34,5 +34,5 @@ then
   fi
 
 else
-  thor dradis:reset
+  bundle exec thor dradis:reset
 fi
