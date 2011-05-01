@@ -34,5 +34,5 @@ then
   fi
 
 else
-  rake dradis:reset
+  thor dradis:reset
 fi
