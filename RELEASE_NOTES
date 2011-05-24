@@ -1,11 +1,15 @@
- Dradis Framework 2.7 - Release Notes
+ Dradis Framework 2.7.1 - Release Notes
 =======================================
- -- version 2.7, Apr 19th, 2011 --
+ -- version 2.7.1, May 24th, 2011 --
   -- http://dradisframework.org --
 
 What is new
 -----------
-We have a lot of new plugins in this release
+This is a bug-fixing release (see below) but we are also introducing a new
+cleaner, leaner note editor window, with more space for the editor and less
+Ajax clutter.
+
+In 2.7.0 we introduced a lot of new plugins:
 * Metasploit import: exploit away with your favourite framework and then import
 seamlessly into Dradis to collate results and merge with information from other
 tools. Kudos to @sussurro
@@ -20,11 +24,11 @@ its (.sc) files into Dradis.
 * The guys at the Web Exploitation Framework (wXf) team created an upload for 
 Dradis.
 
-Some of our good old plugins have been updated: 
+Some of our good old plugins were updated: 
 * Nessus plugin supports .nessus v2 format
 * Vuln::DB import plugin updated to work with the latest release (http://securityroots.com/vulndb/)
 
-Along with the changes in the plugin themselves Dradis 2.7 introduces the new 
+Along with the changes in the plugin themselves Dradis 2.7.0 introduced the new 
 Configuration Manager (browse to /configurations once the server is running).
 All the configuration settings for every plugin can be accessed and edited 
 through the new config manager. Forget the .yml files and embrace the new web
@@ -42,21 +46,26 @@ magic in real time through the new Ajax-enabled interface.
 
 Bugs Fixed
 ----------
+ #3 - Updated NeXpose plugin
+ #4 - dradis:upload:package fails
+ #6 - When last attachment is deleted from a node the Attachments tab still 
+      shows a (!)
+ #7 - Changes in vulndb:: settings don't have any effect
+ #8 - No way to reset the password
+#10 - Vuln::DB plugin expects the remote host to run over SSL
 #2888332 - Can't upload attachments with certain names
 #2973256 - New category + note assignment creates havoc
 
+Report your issues at: https://github.com/dradis/dradisframework/issues
+
 Known Issues
 ------------
-* In the Windows installer the reset.bat script contains a hard-coded PATH to
-c:\Ruby187. If you installed ruby in a different location you will need to
-adjust this file.
-
 
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.7.0-setup.exe, and the platform independent packages,
-dradis-v2.7.0.tar.bz2 and dradis-v2.7.0.tar.gz. This can all be
+dradis-v2.7.1-setup.exe, and the platform independent packages,
+dradis-v2.7.1.tar.bz2 and dradis-v2.7.1.tar.gz. This can all be
 downloaded from the website [i]. 
 
 For Linux prerequisite instructions please see readme.txt or [ii].
