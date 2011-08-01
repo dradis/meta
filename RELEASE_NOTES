@@ -1,13 +1,11 @@
- Dradis Framework 2.7.1 - Release Notes
+ Dradis Framework 2.7.2 - Release Notes
 =======================================
- -- version 2.7.1, May 24th, 2011 --
+ -- version 2.7.2, August 1st, 2011 --
   -- http://dradisframework.org --
 
 What is new
 -----------
-This is a bug-fixing release (see below) but we are also introducing a new
-cleaner, leaner note editor window, with more space for the editor and less
-Ajax clutter.
+This is a bug-fixing release (see below).
 
 In 2.7.0 we introduced a lot of new plugins:
 * Metasploit import: exploit away with your favourite framework and then import
@@ -46,15 +44,14 @@ magic in real time through the new Ajax-enabled interface.
 
 Bugs Fixed
 ----------
- #3 - Updated NeXpose plugin
- #4 - dradis:upload:package fails
- #6 - When last attachment is deleted from a node the Attachments tab still 
-      shows a (!)
- #7 - Changes in vulndb:: settings don't have any effect
- #8 - No way to reset the password
-#10 - Vuln::DB plugin expects the remote host to run over SSL
-#2888332 - Can't upload attachments with certain names
-#2973256 - New category + note assignment creates havoc
+ #5 - Ajax paths are messed when run through Apache 
+ #9 - Some plugins still use Rake instead of Thor
+#13 - No easy way to check the server version
+#14 - EditorWindow autofocus
+#15 - Preview widget refreshes even if content didn't change
+#16 - Can't save without selecting a branch
+#19 - Can't view attachments with multiple dots in them
+#20 - Keyboard selection when moving through nodes and tree
 
 Report your issues at: https://github.com/dradis/dradisframework/issues
 
@@ -64,8 +61,8 @@ Known Issues
 Installing
 ----------
 As always the release ships with a windows installer,
-dradis-v2.7.1-setup.exe, and the platform independent packages,
-dradis-v2.7.1.tar.bz2 and dradis-v2.7.1.tar.gz. This can all be
+dradis-v2.7.2-setup.exe, and the platform independent packages,
+dradis-v2.7.2.tar.bz2 and dradis-v2.7.2.tar.gz. This can all be
 downloaded from the website [i]. 
 
 For Linux prerequisite instructions please see readme.txt or [ii].
