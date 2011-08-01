@@ -12,4 +12,4 @@
 # sorry folks, nothing smart going on here
 export RAILS_ENV=production
 cd server
-bundle exec rails server webrick
+bundle exec rails server webrick $*
