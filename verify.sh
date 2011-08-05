@@ -204,6 +204,20 @@ if [ $EXTENDED -eq 1 ]; then
 
 fi;
 
+# verify LibXML2 libraries and headers
+echo -n "Looking for the LibXML2 libraries and headers... "
+which xml2-config > /dev/null
+if [ $? -eq 0 ]; then
+  echo "found."
+else
+  echo -e '\E[31;40mNOT found\E[0m'
+  echo
+  echo "LibXML2 libraries not found. Try: "
+  echo "  apt-get install libxml2-dev libxslt1-dev"
+  echo
+  exit 10
+fi;
+
 # clean up
 if [ -e "mkmf.log" ]; then
   rm mkmf.log
