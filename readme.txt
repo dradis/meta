@@ -5,7 +5,7 @@
   3. Installation Notes (Windows)
   4. Running Dradis
 
-Dradis 2.7.2 - 1st of August 2011
+Dradis 2.8 - 10th of October 2011
 
 
 1. General Information
