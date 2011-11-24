@@ -150,16 +150,16 @@ else
 fi;
 
 # verify SQLite3 bindings for Ruby
-echo -n "Looking for the SQLite3 ruby gem [sqlite3-ruby]... "
-ruby -rrubygems -e "gem 'sqlite3-ruby', '>=1.2.4'" 2> /dev/null
+echo -n "Looking for the SQLite3 ruby gem [sqlite3]... "
+ruby -rrubygems -e "gem 'sqlite3', '>=1.2.4'" 2> /dev/null
 if [ $? -eq 0 ]; then
   SQLITERUBY_VERSION=`ruby -rrubygems -e "require 'sqlite3/version'; puts SQLite3::Version::STRING"`
   echo -e 'found [ \E[32;40mv'$SQLITERUBY_VERSION'\E[0m ].'
 else
   echo -e '\E[31;40mNOT found\E[0m'
   echo
-  echo "SQLite3 ruby gem (sqlite3-ruby [>= 1.2.4]) not found. Try: "
-  echo "  gem install sqlite3-ruby"
+  echo "SQLite3 ruby gem (sqlite3 [>= 1.2.4]) not found. Try: "
+  echo "  gem install sqlite3"
   echo
   exit 7
 fi;
