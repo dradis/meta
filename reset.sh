@@ -20,7 +20,7 @@ then
   echo -n "Some Ruby gems are missing, do you want to install them now? [y] "
   read INSTALL
 
-  if [ $INSTALL = "y" ]
+  if [ "x$INSTALL" = "xy" ]
   then
     echo
     echo -e "Ok then, I am going to run \033[1mbundle install\033[0m for you, then you should run this script again."
