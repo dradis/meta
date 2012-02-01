@@ -21,7 +21,7 @@ is also a forum and a #dradis IRC channel at irc.freenode.org.
 
     http://dradisframework.org/community/
 
-Relese notes can be found in the RELEASE_NOTES document
+Release notes can be found in the RELEASE_NOTES document
 
 
 1. Installation Notes (*nix)
@@ -34,15 +34,15 @@ See section 4. Running Dradis
 
 2. Installation Notes (Windows)
 ===============================================================================
-The dradis installation gives the users the option to install the following
+The Dradis installation gives the users the option to install the following
 components:
- - Ruby 1.8.7
+ - Ruby 1.9.3
  - Dradis Framework Core
  - The SQLite3 library and sqlite3 gem 
- - Bundler
+ - The Bundler gem
 
 Note when installing as a limited access user:
-The sqlite3 gem are dependant on the following dlls to be in the Windows\system32 
+The sqlite3 gem are dependent on the following dlls to be in the Windows\system32 
 directory or the Ruby\bin directory: 
  - sqlite3.dll
  - msvcr71.dll
@@ -51,7 +51,7 @@ directory or the Ruby\bin directory:
 
 If the installer did not have access to the system32 then these files need to be 
 copied manually. Simply copy them from the Dradis install directory to the 
-%WINDIR%\system32 folder or the c:\Ruby187\bin directory.
+%WINDIR%\system32 folder or the c:\Ruby193\bin directory.
 
 2.1. Ruby Installer
 -------------------
@@ -76,7 +76,7 @@ it is left to the user to remove these manually.
 This can be done with by following these steps:
 - run "gem uninstall sqlite3" in the command line
 - run "gem uninstall RedCloth" in the command line
-- run "gem uninstall Bundler" in the command line
+- run "gem uninstall bundler" in the command line
 
 
 3. Running Dradis
@@ -113,5 +113,11 @@ You can verify that everything is running as it should by pointing your browser 
 
 https://localhost:3004/
 
-For more information regarding Dradis startup visit:
-  http://dradisframework.org/configure.html
+And browse to https://localhost:3004 to start using Dradis. If you need to bind
+to a different address (so others can connect to your instance) or another port
+number, you can use the -b and -p switches respectively:
+
+    $ ./start.sh -b 0.0.0.0 -p 443
+
+For more information visit:
+  http://dradisframework.org/
