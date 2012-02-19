@@ -9,6 +9,9 @@
 # this file.
 #
 
+# This loads RVM if available which is needed to process the ./server/.rvmrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # sorry folks, nothing smart going on here
 export RAILS_ENV=production
 cd server
