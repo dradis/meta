@@ -19,58 +19,35 @@
 
 TARGET_RUBY=1.9.3
 CHECK_PASSED=1
+PACKAGE_LIST=()
 
-# ======================================================= Dependencies: libraries
+# ========================================= Dependencies: libraries and binaries
 
-# TODO: libssl-dev, libsqlite3-dev
+# RVM requirements. See:
+#   https://github.com/wayneeseguin/rvm/blob/master/scripts/requirements
 
-echo -n "Looking for the libxml2 libraries and headers... "
-which xml2-config > /dev/null
-if [ $? -eq 0 ]; then
-  echo "found."
-else
-  CHECK_PASSED=0
-  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
-  echo "  apt-get install libxml2-dev libxslt1-dev"
-fi
+dradis_apt_binary="$(builtin command -v apt-get)"
 
+if [[ ! -z "$dradis_apt_binary" ]]
+then
 
-# ======================================================= Dependencies: binaries
-echo -n "Checking for system dependencies: git..."
-which git > /dev/null
-if [[ $? -eq 0 ]]; then
-  GIT_EXEC=`which git`
-  echo -e "found [ \e[32;40m$GIT_EXEC\e[0m ]."
-else
-  CHECK_PASSED=0
-  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
-  echo "  apt-get install git"
-fi
-
-echo -n "Checking for system dependencies: curl... "
-which curl > /dev/null
-if [[ $? -eq 0 ]]; then
-  CURL_EXEC=`which curl`
-  echo -e "found [ \e[32;40m $CURL_EXEC\e[0m ]."
-else
-  CHECK_PASSED=0
-  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
-  echo "  apt-get install curl"
-fi
-
-echo -n "Checking for system dependencies: autoconf... "
-which autoconf > /dev/null
-if [[ $? -eq 0 ]]; then
-  AUTOCONF_EXEC=`which autoconf`
-  echo -e "found [ \e[32;40m $AUTOCONF_EXEC\e[0m ]."
-else
-  CHECK_PASSED=0
-  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
-  echo "  apt-get install autoconf"
+  for package in build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses5-dev automake libtool; do
+    echo -n "Searching for: $package... "
+    VERSION=$(dpkg-query -W -f='${Status}' $package 2>/dev/null)
+    if [[ $? -eq 0 && $VERSION = "install ok installed" ]]; then
+      echo -e " [ \e[32;40mfound\e[0m ]."
+    else
+      CHECK_PASSED=0
+      PACKAGE_LIST=("${PACKAGE_LIST[@]} $package")
+      echo -e "\e[31;40mNOT found\e[0m."
+    fi
+  done
 fi
 
 # Do we have all the binaries and libraries?
 if [[ $CHECK_PASSED -eq 0 ]]; then
+  echo "Some required packages were missing, please try installing them with:"
+  echo "  apt-get install ${PACKAGE_LIST[@]}"
   exit 1
 fi
 
