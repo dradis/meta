@@ -25,7 +25,7 @@ if [[ $? -eq 0 ]]; then
   GIT_EXEC=`which git`
   echo -e "found [ \e[32;40m$GIT_EXEC\e[0m ]."
 else
-  CHECK_PASED=0
+  CHECK_PASSED=0
   echo -e "\E[31;40mNOT found\E[0m. Try installing with:"
   echo "  apt-get install git"
 fi
