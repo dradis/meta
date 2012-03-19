@@ -21,6 +21,9 @@ TARGET_RUBY=1.9.3
 CHECK_PASSED=1
 
 # ======================================================= Dependencies: libraries
+
+# TODO: libssl-dev, libsqlite3-dev
+
 echo -n "Looking for the libxml2 libraries and headers... "
 which xml2-config > /dev/null
 if [ $? -eq 0 ]; then
@@ -97,6 +100,7 @@ echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
 rvm get head
 rvm install $TARGET_RUBY
 rvm use $TARGET_RUBY --default
+rvm install bundler --no-rdoc --no-ri
 
 # ================================================================== Dradis repo
 echo "Downloading dradis-repo to ~/dradis-git (you can move this folder around later)"
