@@ -60,3 +60,9 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
 else
   echo "There is something wrong with the RVM installation $HOME/.rvm/scripts/rvm not found. Consider reinstalling."
 fi
+
+# =================================================================== Ruby 1.9.3
+echo "Installing Ruby 1.9.3 and making it the default Ruby ..."
+rvm get head
+rvm install 1.9.3
+rvm use 1.9.3 --default
