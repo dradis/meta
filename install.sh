@@ -19,11 +19,17 @@
 
 
 echo "Installing RVM (Ruby Version Manager) ..."
-if [ -d ~/.rvm ]; then
+if [[ -d ~/.rvm ]]; then
   echo "RVM already installed under $HOME/.rvm/"
-  rvm version
 else
   bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-  # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
   source ~/.bash_profile
+fi
+
+# Load RVM if available
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  . "$HOME/.rvm/scripts/rvm"
+  echo "RVM version: `rvm version | awk {print $2}`"
+else
+  echo "There is something wrong with the RVM installation $HOME/.rvm/scripts/rvm not found. Consider reinstalling."
 fi
