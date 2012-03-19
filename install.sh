@@ -17,19 +17,46 @@
 #
 # Copyright: Security Roots Ltd. 
 
+# =================================================================== git & curl
+CHECK_PASSED=1
+echo -n "Checking for system dependencies: git..."
+which git > /dev/null
+if [[ $? -eq 0 ]]; then
+  GIT_EXEC=`which git`
+  echo -e "found [ \e[32;40m$GIT_EXEC\e[0m ]."
+else
+  CHECK_PASED=0
+  echo -e "\E[31;40mNOT found\E[0m. Try installing with:"
+  echo "  apt-get install git"
+fi
 
+echo -n "Checking for system dependencies: curl... "
+which curl > /dev/null
+if [[ $? -eq 0 ]]; then
+  CURL_EXEC=`which curl`
+  echo -e "found [ \e[32;40m $CURL_EXEC\e[0m ]."
+else
+  CHECK_PASSED=0
+  echo "curl binary \E[31;40mNOT found\E[0m. Try installing with:"
+  echo "  apt-get install curl"
+fi
+
+if [[ $CHECK_PASSED -eq 0 ]]; then
+  exit 1
+fi
+
+# ========================================================================= RVM
 echo "Installing RVM (Ruby Version Manager) ..."
 if [[ -d ~/.rvm ]]; then
   echo "RVM already installed under $HOME/.rvm/"
 else
   bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-  source ~/.bash_profile
 fi
 
 # Load RVM if available
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   . "$HOME/.rvm/scripts/rvm"
-  echo "RVM version: `rvm version | awk {print $2}`"
+  echo "RVM version: `rvm version | awk '{print $2}'`"
 else
   echo "There is something wrong with the RVM installation $HOME/.rvm/scripts/rvm not found. Consider reinstalling."
 fi
