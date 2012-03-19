@@ -17,6 +17,8 @@
 #
 # Copyright: Security Roots Ltd. 
 
+TARGET_RUBY=1.9.3-p0
+
 # =================================================================== git & curl
 CHECK_PASSED=1
 echo -n "Checking for system dependencies: git..."
@@ -62,7 +64,18 @@ else
 fi
 
 # =================================================================== Ruby 1.9.3
-echo "Installing Ruby 1.9.3 and making it the default Ruby ..."
+echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
 rvm get head
-rvm install 1.9.3
-rvm use 1.9.3 --default
+rvm install $TARGET_RUBY
+rvm use $TARGET_RUBY --default
+
+# ================================================================== Dradis repo
+echo "Downloading dradis-repo to ~/dradis-git (you can move this folder around later)"
+mkdir $HOME/dradis-git
+cd $HOME/dradis-git
+git clone https://github.com/dradis/dradisframework.git server
+for file in verify reset start; do
+  curl -O https://raw.github.com/dradis/meta/master/$file.sh
+done
+chmod +x *.sh
+
