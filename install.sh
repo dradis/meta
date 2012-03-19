@@ -28,7 +28,7 @@ if [[ $? -eq 0 ]]; then
   echo -e "found [ \e[32;40m$GIT_EXEC\e[0m ]."
 else
   CHECK_PASSED=0
-  echo -e "\E[31;40mNOT found\E[0m. Try installing with:"
+  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
   echo "  apt-get install git"
 fi
 
@@ -39,7 +39,7 @@ if [[ $? -eq 0 ]]; then
   echo -e "found [ \e[32;40m $CURL_EXEC\e[0m ]."
 else
   CHECK_PASSED=0
-  echo "curl binary \E[31;40mNOT found\E[0m. Try installing with:"
+  echo -e "curl binary \e[31;40mNOT found\e[0m. Try installing with:"
   echo "  apt-get install curl"
 fi
 
@@ -50,7 +50,7 @@ if [[ $? -eq 0 ]]; then
   echo -e "found [ \e[32;40m $AUTOCONF_EXEC\e[0m ]."
 else
   CHECK_PASSED=0
-  echo "autoconf binary \E[31;40mNOT found\E[0m. Try installing with:"
+  echo -e "autoconf binary \e[31;40mNOT found\e[0m. Try installing with:"
   echo "  apt-get install build-essential"
 fi
 
