@@ -68,9 +68,9 @@ else
 fi
 
 # Load additional RVM packages
-for package in zlib openssl libxslt libxml2; do
-  rvm pkg install $package
-done
+#for package in zlib openssl libxslt libxml2; do
+#  rvm pkg install $package
+#done
 
 # =================================================================== Ruby 1.9.3
 echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
@@ -89,3 +89,5 @@ for file in verify reset start; do
 done
 chmod +x *.sh
 
+echo "Please go to ~/dradis-git and run the ./reset.sh script"
+echo "Enjoy!"
