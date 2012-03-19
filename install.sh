@@ -100,7 +100,7 @@ echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
 rvm get head
 rvm install $TARGET_RUBY
 rvm use $TARGET_RUBY --default
-rvm install bundler --no-rdoc --no-ri
+gem install bundler --no-rdoc --no-ri
 
 # ================================================================== Dradis repo
 echo "Downloading dradis-repo to ~/dradis-git (you can move this folder around later)"
