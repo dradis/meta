@@ -18,9 +18,21 @@
 # Copyright: Security Roots Ltd. 
 
 TARGET_RUBY=1.9.3
-
-# ========================================================== git, curl, autoconf
 CHECK_PASSED=1
+
+# ======================================================= Dependencies: libraries
+echo -n "Looking for the libxml2 libraries and headers... "
+which xml2-config > /dev/null
+if [ $? -eq 0 ]; then
+  echo "found."
+else
+  CHECK_PASSED=0
+  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
+  echo "  apt-get install libxml2-dev libxslt1-dev"
+fi
+
+
+# ======================================================= Dependencies: binaries
 echo -n "Checking for system dependencies: git..."
 which git > /dev/null
 if [[ $? -eq 0 ]]; then
@@ -39,7 +51,7 @@ if [[ $? -eq 0 ]]; then
   echo -e "found [ \e[32;40m $CURL_EXEC\e[0m ]."
 else
   CHECK_PASSED=0
-  echo -e "curl binary \e[31;40mNOT found\e[0m. Try installing with:"
+  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
   echo "  apt-get install curl"
 fi
 
@@ -50,10 +62,11 @@ if [[ $? -eq 0 ]]; then
   echo -e "found [ \e[32;40m $AUTOCONF_EXEC\e[0m ]."
 else
   CHECK_PASSED=0
-  echo -e "autoconf binary \e[31;40mNOT found\e[0m. Try installing with:"
+  echo -e "\e[31;40mNOT found\e[0m. Try installing with:"
   echo "  apt-get install autoconf"
 fi
 
+# Do we have all the binaries and libraries?
 if [[ $CHECK_PASSED -eq 0 ]]; then
   exit 1
 fi
@@ -73,6 +86,11 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
 else
   echo "There is something wrong with the RVM installation $HOME/.rvm/scripts/rvm not found. Consider reinstalling."
 fi
+
+# Load additional RVM packages
+for package in zlib openssl libxslt libxml2; do
+  rvm pkg install $package
+done
 
 # =================================================================== Ruby 1.9.3
 echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
