@@ -17,7 +17,7 @@
 #
 # Copyright: Security Roots Ltd. 
 
-TARGET_RUBY=1.9.3-p0
+TARGET_RUBY=1.9.3
 
 # ========================================================== git, curl, autoconf
 CHECK_PASSED=1
