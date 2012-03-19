@@ -19,7 +19,7 @@
 
 TARGET_RUBY=1.9.3-p0
 
-# =================================================================== git & curl
+# ========================================================== git, curl, autoconf
 CHECK_PASSED=1
 echo -n "Checking for system dependencies: git..."
 which git > /dev/null
@@ -41,6 +41,17 @@ else
   CHECK_PASSED=0
   echo "curl binary \E[31;40mNOT found\E[0m. Try installing with:"
   echo "  apt-get install curl"
+fi
+
+echo -n "Checking for system dependencies: autoconf... "
+which autoconf > /dev/null
+if [[ $? -eq 0 ]]; then
+  AUTOCONF_EXEC=`which autoconf`
+  echo -e "found [ \e[32;40m $AUTOCONF_EXEC\e[0m ]."
+else
+  CHECK_PASSED=0
+  echo "autoconf binary \E[31;40mNOT found\E[0m. Try installing with:"
+  echo "  apt-get install build-essential"
 fi
 
 if [[ $CHECK_PASSED -eq 0 ]]; then
