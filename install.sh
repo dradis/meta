@@ -51,7 +51,7 @@ if [[ $? -eq 0 ]]; then
 else
   CHECK_PASSED=0
   echo -e "autoconf binary \e[31;40mNOT found\e[0m. Try installing with:"
-  echo "  apt-get install build-essential"
+  echo "  apt-get install autoconf"
 fi
 
 if [[ $CHECK_PASSED -eq 0 ]]; then
