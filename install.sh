@@ -17,6 +17,7 @@
 #
 # Copyright: Security Roots Ltd. 
 
+TARGET_DIR=$HOME/dradis-git
 TARGET_RUBY=1.9.3
 CHECK_PASSED=1
 PACKAGE_LIST=()
@@ -81,13 +82,24 @@ gem install bundler --no-rdoc --no-ri
 
 # ================================================================== Dradis repo
 echo "Downloading dradis-repo to ~/dradis-git (you can move this folder around later)"
-mkdir $HOME/dradis-git
-cd $HOME/dradis-git
-git clone https://github.com/dradis/dradisframework.git server
+if [[ ! -d $TARGET_DIR ]]; then
+  mkdir $TARGET_DIR
+  cd $TARGET_DIR
+  git clone https://github.com/dradis/dradisframework.git server
+else
+  echo "Warning, the target directory [$TARGET_DIR] already existed. Reusing it..."
+  cd $TARGET_DIR/server/
+  git pull origin master
+  cd ../
+fi
 for file in verify reset start; do
-  curl -O https://raw.github.com/dradis/meta/master/$file.sh
+  if [[ ! -f $file.sh ]]; then
+    curl -O https://raw.github.com/dradis/meta/master/$file.sh
+    chmod +x $file.sh
+  else
+    echo "File [$file.sh] already exists. Skipping."
+  fi
 done
-chmod +x *.sh
 
 echo "Please go to ~/dradis-git and run the ./reset.sh script"
 echo "Enjoy!"
