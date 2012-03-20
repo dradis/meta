@@ -74,7 +74,7 @@ fi
 
 # =================================================================== Ruby 1.9.3
 echo "Installing Ruby $TARGET_RUBY and making it the default Ruby ..."
-rvm get head
+rvm get stable
 rvm install $TARGET_RUBY
 rvm use $TARGET_RUBY --default
 gem install bundler --no-rdoc --no-ri
