@@ -57,6 +57,21 @@ echo "Installing RVM (Ruby Version Manager) ..."
 if [[ -d ~/.rvm ]]; then
   echo "RVM already installed under $HOME/.rvm/"
 else
+
+  # Override default behaviour, install under /root/ if run as root. See:
+  #   http://beginrescueend.com/support/faq/#root
+  if [[ $EUID == 0 ]]; then
+    echo "Root user detected. Installing under /root/"
+    if [[ -f /root/.rvmrc ]]; then
+      echo "Error: no /root/.rvm/ install was found but a /root/.rvmrc file exists."
+      echo "Check the contents of this file and rename/delete it before running the installer again."
+      exit 1
+    else
+      echo 'export rvm_prefix="$HOME"' > /root/.rvmrc
+      echo 'export rvm_path="$HOME/.rvm"' >> /root/.rvmrc
+    fi
+  fi
+
   bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 fi
 
