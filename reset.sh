@@ -50,7 +50,7 @@ if [[ ! -d public/assets/ ]]; then
 
   if [[ "x$ASSETS" = "xy" ]]; then
     echo
-    echo -e "Ok then, I am going to run the \033[1massets:precompile\033] task for you."
+    echo -e "Ok then, I am going to run the \033[1massets:precompile\033[0m task for you."
     echo
 
     bundle exec rake RAILS_ENV=production assets:precompile
